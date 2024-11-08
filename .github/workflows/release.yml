@@ -1,0 +1,41 @@
+name: Relase
+on:
+ push:
+    branches:
+        - main
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@v2
+        id: release
+        with:
+          command: manifest
+          release-type: node
+          token: ${{ secrets.GITHUB_TOKEN }}
+          default-branch: main
+      # The logic handles npm publication
+      - name: Checkout repository
+        if: ${{ steps.release.outputs.release_created }}        
+        uses: actions/checkout@v4
+
+      - name: Print release outputs
+        run: echo "${{ toJson(steps.release.outputs) }}"
+    
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        if: ${{ steps.release.outputs.release_created }}
+        with:
+          node-version: node@latest
+          registry-url: https://registry.npmjs.org/
+      - name: Build Packages
+        if: ${{ steps.release.outputs.release_created }}
+        run: |
+          npm install 
+      - name: Publish
+        if: ${{ steps.release.outputs.release_created }}
+        run: |
+          run: npx lerna publish from-package --no-push --no-private --yes
+        env:
+            NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+    
