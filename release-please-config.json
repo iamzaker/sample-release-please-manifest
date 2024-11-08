@@ -1,11 +1,10 @@
 {
-    
-    "release-type": "node",
-    "release-as": "0.0.1",
-    "always-link-local": false,
-    "separate-pull-requests": false,
+    "packages": {
       "packages/hello-world-util": {
         "release-type": "node",
         "release-as": "0.0.1"
-      }  
+      }
+    },
+    "separate-pull-requests": false
   }
+  
