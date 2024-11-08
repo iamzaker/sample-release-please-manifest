@@ -1,0 +1,1 @@
+# sample-release-please-manifest
