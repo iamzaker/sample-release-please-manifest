@@ -1,0 +1,6 @@
+{
+    "packages/hello-world-util": {
+        "component": "@smart-utility/hello-world-util",
+        "version": "0.0.0-dev"
+    }
+}
