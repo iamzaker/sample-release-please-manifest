@@ -1,0 +1,15 @@
+{
+  "name": "@smart-utility/hello-world-util",
+  "version": "0.0.0-dev",
+  "description": "Hello world util",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "",
+  "license": "ISC"
+}

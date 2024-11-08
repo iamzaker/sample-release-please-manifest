@@ -1,0 +1,40 @@
+# Build
+dist/
+build/
+*.tsbuildinfo
+
+# Dependencies
+node_modules/
+
+# IDE 
+/.vscode/*
+/.idea
+/.project
+/.classpath
+/.settings
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Env
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test
+coverage/
+.nyc_output/
+
+# Others
+.npmrc
+
+# Ignore auto-generated TypeDoc docs
+*/*/docs/API/node_modules/
