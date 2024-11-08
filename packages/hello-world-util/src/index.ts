@@ -1,2 +1,1 @@
-
-export const helloWorld = () => 'Hello World!';
+export { helloWorld } from './hello-world';

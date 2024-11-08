@@ -2,9 +2,11 @@
   "name": "@smart-utility/hello-world-util",
   "version": "0.0.0-dev",
   "description": "Hello world util",
-  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose",
+    "test:cov": "jest --coverage",
     "build": "tsc"
   },
   "publishConfig": {
