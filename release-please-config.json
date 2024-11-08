@@ -1,9 +1,11 @@
 {
-    "packages":{
-        "packages":{
-            "package-name": "@smart-utility/hello-world-util",
-            "releaseType": "node",
-            "always-link-local": true
-        }
-    }
-}
+    
+    "release-type": "node",
+    "release-as": "0.0.1",
+    "always-link-local": false,
+    "separate-pull-requests": false,
+      "packages/hello-world-util": {
+        "release-type": "node",
+        "release-as": "0.0.1"
+      }  
+  }
