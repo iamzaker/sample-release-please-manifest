@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.1](https://github.com/iamzaker/sample-release-please-manifest/compare/v0.0.1...v0.0.1) (2024-11-09)
+
+
+### Miscellaneous Chores
+
+* **repo:** release 0.0.1 ([1fefd5f](https://github.com/iamzaker/sample-release-please-manifest/commit/1fefd5f0a9e31e25500a8b3183c776c8a23e4613))
+
 ## 0.0.1 (2024-11-09)
 
 
