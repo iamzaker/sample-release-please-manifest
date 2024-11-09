@@ -1,11 +1,15 @@
 {
+    "include-component-in-tag": true,
+    "include-v-in-tag": true,
+    "tag-separator": "@",
     "packages": {
-      "packages/hello-world-util": {
-        "release-type": "node",
-        "release-as": "0.0.1",
-        "always-link-local": true
-      }
+        "hello-world-util": {
+            "path": "packages/hello-world-util",
+            "release-type": "node",
+            "always-link-local": true
+        }
     },
-    "separate-pull-requests": false
+    "separate-pull-requests": true,
+    "$schema": "https://raw.githubusercontent.com/googleapis/release-please/blob/main/schemas/config.json"
   }
   
