@@ -31,9 +31,9 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}        
         uses: actions/checkout@v4
 
-      - name: Print release outputs
-        run: |
-          echo "release_created: ${{ steps.release.outputs }}"
+    #   - name: Print release outputs
+    #     run: |
+    #       echo "release_created: ${{ steps.release.outputs }}"
     
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -41,6 +41,7 @@ jobs:
         with:
           node-version: node@latest
           registry-url: https://registry.npmjs.org/
+
       - name: Build Packages
         if: ${{ steps.release.outputs.release_created }}
         run: |
