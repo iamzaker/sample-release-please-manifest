@@ -5,12 +5,11 @@
     "separate-pull-requests": true,
     "packages": {
         "hello-world-util": {
-            "path": "./packages/hello-world-util",
+            "path": "packages/hello-world-util",
             "release-type": "node",
-            "always-link-local": true,
-            "update-package-json": true
+            "always-link-local": true
         }
     },
-    "$schema": "https://github.com/googleapis/release-please/blob/main/schemas/config.json"
+    "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
   }
   
