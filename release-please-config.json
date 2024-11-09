@@ -7,7 +7,8 @@
         "hello-world-util": {
             "path": "packages/hello-world-util",
             "release-type": "node",
-            "always-link-local": true
+            "always-link-local": true,
+            "update-package-json": true
         }
     },
     "$schema": "https://github.com/googleapis/release-please/blob/main/schemas/config.json"
