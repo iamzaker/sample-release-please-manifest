@@ -2,6 +2,7 @@
     "include-component-in-tag": true,
     "include-v-in-tag": true,
     "tag-separator": "@",
+    "separate-pull-requests": true,
     "packages": {
         "hello-world-util": {
             "path": "packages/hello-world-util",
@@ -9,7 +10,6 @@
             "always-link-local": true
         }
     },
-    "separate-pull-requests": true,
-    "$schema": "https://raw.githubusercontent.com/googleapis/release-please/blob/main/schemas/config.json"
+    "$schema": "https://github.com/googleapis/release-please/blob/main/schemas/config.json"
   }
   

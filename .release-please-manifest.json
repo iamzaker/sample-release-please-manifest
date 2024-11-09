@@ -1,4 +1,3 @@
 {
-    "packages/hello-world-util": "0.0.1",
-    ".": "0.0.1"
+    "packages/hello-world-util": "0.0.1"
 }
