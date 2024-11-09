@@ -2,7 +2,8 @@
     "packages": {
       "packages/hello-world-util": {
         "release-type": "node",
-        "release-as": "0.0.1"
+        "release-as": "0.0.1",
+        "always-link-local": true
       }
     },
     "separate-pull-requests": false
