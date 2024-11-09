@@ -17,6 +17,7 @@ jobs:
         with:
         #   command: manifest
           release-type: node
+          path: packages/hello-world-util
           token: ${{ secrets.GITHUB_TOKEN }}
         #   default-branch: main
 
