@@ -43,8 +43,7 @@ jobs:
           
       - name: Publish
         if: ${{ steps.release.outputs.release_created }}
-        run: |
-          run: npx lerna publish from-package --no-push --no-private --yes
+        run: npx lerna publish from-package --no-push --no-private --yes
         env:
             NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
     
