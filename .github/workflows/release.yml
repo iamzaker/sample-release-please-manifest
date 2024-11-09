@@ -29,17 +29,17 @@ jobs:
         run: |
           echo "release_created: ${{ steps.release.outputs }}"
     
-    #   - name: Setup Node
-    #     uses: actions/setup-node@v4
-    #     if: ${{ steps.release.outputs.release_created }}
-    #     with:
-    #       node-version: node@latest
-    #       registry-url: https://registry.npmjs.org/
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        if: ${{ steps.release.outputs.release_created }}
+        with:
+          node-version: node@latest
+          registry-url: https://registry.npmjs.org/
           
-    #   - name: Build Packages
-    #     if: ${{ steps.release.outputs.release_created }}
-    #     run: |
-    #       npm install 
+      - name: Build Packages
+        if: ${{ steps.release.outputs.release_created }}
+        run: |
+          npm install 
           
       - name: Publish
         if: ${{ steps.release.outputs.release_created }}
