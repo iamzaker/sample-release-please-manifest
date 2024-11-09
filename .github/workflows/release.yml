@@ -1,4 +1,4 @@
-name: Relase
+name: Release
 on:
  push:
     branches:
@@ -33,7 +33,7 @@ jobs:
         uses: actions/setup-node@v4
         if: ${{ steps.release.outputs.release_created }}
         with:
-          node-version: node@latest
+          node-version: lts/*
           registry-url: https://registry.npmjs.org/
           
       - name: Build Packages
