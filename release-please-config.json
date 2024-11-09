@@ -5,7 +5,7 @@
     "separate-pull-requests": true,
     "packages": {
         "hello-world-util": {
-            "path": "packages/hello-world-util",
+            "path": "./packages/hello-world-util",
             "release-type": "node",
             "always-link-local": true,
             "update-package-json": true
