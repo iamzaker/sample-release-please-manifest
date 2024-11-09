@@ -60,4 +60,5 @@ jobs:
         if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            DEBUG: release-please*
         run: gh release upload ${{ steps.release.outputs['packages/hello-world-util--tag_name'] }} ./artifact/package-artifact.zip
