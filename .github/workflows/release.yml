@@ -20,12 +20,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
         #   default-branch: main
 
-      - name: Upload Release Artifact
-        if: ${{ steps.release.outputs.release_created }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release upload ${{ steps.release.outputs.tag_name }} ./artifact/some-build-artifact.zip
-
       # The logic handles npm publication
       - name: Checkout repository
         if: ${{ steps.release.outputs.release_created }}        
@@ -35,21 +29,33 @@ jobs:
         run: |
           echo "release_created: ${{ steps.release.outputs }}"
     
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        if: ${{ steps.release.outputs.release_created }}
-        with:
-          node-version: node@latest
-          registry-url: https://registry.npmjs.org/
+    #   - name: Setup Node
+    #     uses: actions/setup-node@v4
+    #     if: ${{ steps.release.outputs.release_created }}
+    #     with:
+    #       node-version: node@latest
+    #       registry-url: https://registry.npmjs.org/
           
-      - name: Build Packages
-        if: ${{ steps.release.outputs.release_created }}
-        run: |
-          npm install 
+    #   - name: Build Packages
+    #     if: ${{ steps.release.outputs.release_created }}
+    #     run: |
+    #       npm install 
+          
       - name: Publish
         if: ${{ steps.release.outputs.release_created }}
         run: |
           run: npx lerna publish from-package --no-push --no-private --yes
         env:
             NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+    
+      - name: Generate artifacts
+        run: |
+            mkdir -p artifact
+            zip -r ./artifact/package-artifact.zip . -i ./packages/hello-world-util/dist
+
+      - name: Upload Release Artifacts
+        if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload ${{ steps.release.outputs['packages/hello-world-util--tag_name'] }} ./artifact/package-artifact.zip
     
