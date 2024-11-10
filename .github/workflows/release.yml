@@ -27,7 +27,8 @@ jobs:
 
       # The logic handles npm publication
       - name: Checkout repository
-        if: ${{ steps.release.outputs.release_created }}        
+        # if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}   
         uses: actions/checkout@v4
 
       - name: Print release outputs
@@ -37,18 +38,21 @@ jobs:
     
       - name: Setup Node
         uses: actions/setup-node@v4
-        if: ${{ steps.release.outputs.release_created }}
+        # if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
         with:
           node-version: lts/*
           registry-url: https://registry.npmjs.org/
           
       - name: Build Packages
-        if: ${{ steps.release.outputs.release_created }}
+        # if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
         run: |
           npm install 
           
       - name: Publish
-        if: ${{ steps.release.outputs.release_created }}
+        # if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
         run: npx lerna publish from-package --no-push --no-private --yes
         env:
             NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
