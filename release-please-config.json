@@ -15,7 +15,8 @@
                 {
                     "type": "node-workspace",
                     "updateAllPackages": true,
-                    "updatePackageDependencies": true
+                    "updatePeerDependencies": true,
+                    "considerAllArtifacts": true
                 }
             ]
         }
