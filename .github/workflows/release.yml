@@ -1,74 +1,39 @@
-name: Release
+name: release
 on:
-  push:
-    branches:
+    push:
+      branches:
         - main
 permissions:
   contents: write
   pull-requests: write
 jobs:
     release-please:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v3
+      runs-on: ubuntu-latest
+      steps:
+        - uses: googleapis/release-please-action@v4
+          id: release
+          with:
+            release-type: node
+            config-file: release-please-config.json
+            manifest-file: .release-please-manifest.json
+            path: | 
+                packages/hello-world-util
+        # The logic below handles the npm publication:
+        - uses: actions/checkout@v4
+          # these if statements ensure that a publication only occurs when
+          # a new release is created:
+          if: ${{ steps.release.outputs.release_created }}
+        - uses: actions/setup-node@v4
+          with:
+            node-version: 12
+            registry-url: 'https://registry.npmjs.org'
+          if: ${{ steps.release.outputs.release_created }}
+        - run: npm ci
+          if: ${{ steps.release.outputs.release_created }}
+        #   if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
 
-            - name: Setup Node.js
-              uses: actions/setup-node@v4
-              with:
-                    node-version: lts/*
-                    registry-url: "https://registry.npmjs.org"
-            - name: Install dependencies
-              run: npm install
-
-            - name: Build
-              run: npm run build
-            
-            - name: Install tree
-              run: sudo apt-get install
-
-            # - name: Print build output
-            #   run: cat ./dist
-            
-            - name: List entire directory structure
-              run: tree
-
-            - name: Generate artifacts
-              run: |
-                mkdir -p artifact
-                zip -r ./artifact/package-artifact.zip . -i ./packages/hello-world-util/dist
-
-            - uses: googleapis/release-please-action@v4
-              id: release
-              with:
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  release-type: node
-                  config-file: release-please-config.json
-                  manifest-file: .release-please-manifest.json
-                  path: | 
-                    packages/hello-world-util
-
-            - name: Ensure package-lock.json is updated
-              run: npm install
-
-            - name: Commit updated package-lock.json
-              run: |
-                    git config --global user.email "github-actions[bot]@users.noreply.github.com"
-                    git config --global user.name "github-actions[bot]"
-                    git add package-lock.json
-                    git commit -m "chore: update package-lock.json"
-                    git push
-            #   if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
-  
-            - name: Upload Release Artifacts
-              if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
-            #   if: ${{ steps.release.outputs.release_created == 'true' }}
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              run: gh release upload ${{ steps.release.outputs['packages/hello-world-util--tag_name'] }} ./artifact/package-artifact.zip
-              
-            - name: Publish to npm
-              if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
-              run: npx lerna publish from-package --no-push --no-private --yes
-              env:
-                NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+        # - run: npm publish
+        - run: npx lerna publish from-package --no-push --no-private --yes
+          env:
+            NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+          if: ${{ steps.release.outputs.release_created }}
