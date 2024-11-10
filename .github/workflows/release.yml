@@ -48,6 +48,18 @@ jobs:
                   path: | 
                     packages/hello-world-util
 
+                    - name: Ensure package-lock.json is updated
+                    run: npm install
+
+            - name: Commit updated package-lock.json
+              run: |
+                    git config --global user.email "github-actions[bot]@users.noreply.github.com"
+                    git config --global user.name "github-actions[bot]"
+                    git add package-lock.json
+                    git commit -m "chore: update package-lock.json"
+                    git push
+              if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
+  
             - name: Upload Release Artifacts
               if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
             #   if: ${{ steps.release.outputs.release_created == 'true' }}
