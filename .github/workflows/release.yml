@@ -1,63 +1,60 @@
 name: Release
 on:
- push:
+  push:
     branches:
         - main
-
 permissions:
   contents: write
   pull-requests: write
-
 jobs:
-  release-please:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        # if: ${{ steps.release.outputs.release_created }}
-        uses: actions/checkout@v4
+    release-please:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-          registry-url: https://registry.npmjs.org/
-          
-      - name: Build Packages
-        run: |
-          npm install 
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                    node-version: lts/*
+                    registry-url: "https://registry.npmjs.org"
+            - name: Install dependencies
+              run: npm install
 
-      - uses: googleapis/release-please-action@v4
-        id: release
-        with:
-        #   command: manifest
-          release-type: node
-        #   path: "packages/hello-world-util"
-          path: |
-            packages/hello-world-util
-          config-file: release-please-config.json
-          manifest-file: .release-please-manifest.json
-          token: ${{ secrets.GITHUB_TOKEN }}
+            - name: Build
+              run: npm run build
+            
+            - name: Install tree
+              run: sudo apt-get install
 
-      - name: Print release outputs
-        continue-on-error: true
-        run: |
-          echo "release_created: ${{ toJson(steps.release.outputs) }}"
-          
-      - name: Publish
-        # if: ${{ steps.release.outputs.release_created }}
-        if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
-        run: npx lerna publish from-package --no-push --no-private --yes
-        env:
-            NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
-    
-      - name: Generate artifacts
-        run: |
-            mkdir -p artifact
-            zip -r ./artifact/package-artifact.zip . -i ./packages/hello-world-util/dist
+            # - name: Print build output
+            #   run: cat ./dist
+            
+            - name: List entire directory structure
+              run: tree
 
-      - name: Upload Release Artifacts
-        if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            DEBUG: release-please*
-        run: gh release upload ${{ steps.release.outputs['packages/hello-world-util--tag_name'] }} ./artifact/package-artifact.zip
+            - name: Generate artifacts
+              run: |
+                mkdir -p artifact
+                zip -r ./artifact/package-artifact.zip . -i ./packages/hello-world-util/dist
+
+            - uses: googleapis/release-please-action@v4
+              id: release
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  release-type: node
+                  path: | 
+                    packages/hello-world-util
+
+            - name: Upload Release Artifacts
+              if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
+            #   if: ${{ steps.release.outputs.release_created == 'true' }}
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: gh release upload ${{ steps.release.outputs['packages/hello-world-util--tag_name'] }} ./artifact/package-artifact.zip
+              
+            - name: Publish to npm
+              if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
+              run: npx lerna publish from-package --no-push --no-private --yes
+              env:
+                NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
