@@ -19,7 +19,20 @@
                     "considerAllArtifacts": true
                 }
             ]
-        }
+        },
+       "starters/nestjs-startup-app": {
+            "always-link-local": true,
+            "path": "starters/nestjs-startup-app",
+            "skip-github-release": true,
+            "plugins":[
+                {
+                    "type": "node-workspace",
+                    "updateAllPackages": true,
+                    "updatePeerDependencies": true,
+                    "considerAllArtifacts": true
+                }
+            ]
+       }
     },
     "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
   }
