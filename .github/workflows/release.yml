@@ -17,7 +17,11 @@ jobs:
         with:
         #   command: manifest
           release-type: node
-        #   path: packages/hello-world-util
+        #   path: "packages/hello-world-util"
+          path: |
+            packages/hello-world-util
+            # packages/another-package
+            # packages/yet-another-package
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
           token: ${{ secrets.GITHUB_TOKEN }}
