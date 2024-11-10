@@ -48,8 +48,8 @@ jobs:
                   path: | 
                     packages/hello-world-util
 
-                    - name: Ensure package-lock.json is updated
-                    run: npm install
+            - name: Ensure package-lock.json is updated
+              run: npm install
 
             - name: Commit updated package-lock.json
               run: |
