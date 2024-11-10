@@ -12,7 +12,11 @@
             "versioning-strategy": "auto",
             "intial-version": "0.0.1",
             "plugins":[
-                "node-workspace"
+                {
+                    "type": "node-workspace",
+                    "updateAllPackages": true,
+                    "updatePackageDependencies": true
+                }
             ]
         }
     },
