@@ -12,6 +12,20 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        # if: ${{ steps.release.outputs.release_created }}
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          registry-url: https://registry.npmjs.org/
+          
+      - name: Build Packages
+        run: |
+          npm install 
+
       - uses: googleapis/release-please-action@v4
         id: release
         with:
@@ -23,32 +37,11 @@ jobs:
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
           token: ${{ secrets.GITHUB_TOKEN }}
-        #   default-branch: main
-
-      # The logic handles npm publication
-      - name: Checkout repository
-        # if: ${{ steps.release.outputs.release_created }}
-        if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}   
-        uses: actions/checkout@v4
 
       - name: Print release outputs
         continue-on-error: true
         run: |
           echo "release_created: ${{ toJson(steps.release.outputs) }}"
-    
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        # if: ${{ steps.release.outputs.release_created }}
-        if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
-        with:
-          node-version: lts/*
-          registry-url: https://registry.npmjs.org/
-          
-      - name: Build Packages
-        # if: ${{ steps.release.outputs.release_created }}
-        if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
-        run: |
-          npm install 
           
       - name: Publish
         # if: ${{ steps.release.outputs.release_created }}
