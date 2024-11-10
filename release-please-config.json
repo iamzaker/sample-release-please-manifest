@@ -3,11 +3,15 @@
     "include-v-in-tag": true,
     "tag-separator": "@",
     "separate-pull-requests": true,
-    "packages": {
-        "packages/hello-world-util": {
-            "release-type": "node",
+    "packages":{
+        "packages/hello-world-util": {                       
+            "release-type": "node",            
             "always-link-local": true,
-            "changelog-path": "CHANGELOG.md"
+            "changelog-path": "CHANGELOG.md",
+            "path": "packages/hello-world-util",
+            "versioning-strategy": "auto",
+            "intial-version": "0.0.1",
+            "release-as": "minor"
         }
     },
     "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
