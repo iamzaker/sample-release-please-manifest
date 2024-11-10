@@ -58,7 +58,7 @@ jobs:
                     git add package-lock.json
                     git commit -m "chore: update package-lock.json"
                     git push
-              if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
+            #   if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
   
             - name: Upload Release Artifacts
               if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
