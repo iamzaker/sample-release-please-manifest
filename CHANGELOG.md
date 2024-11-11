@@ -1,0 +1,57 @@
+# Changelog
+
+## [0.0.1](https://github.com/iamzaker/sample-release-please-manifest/compare/v0.0.1...v0.0.1) (2024-11-11)
+
+
+### Features
+
+* **repo:** add license file ([b5328af](https://github.com/iamzaker/sample-release-please-manifest/commit/b5328afc5d6a743471ec227902ef06f3e1c95518))
+* **repo:** Initial commit ([af24686](https://github.com/iamzaker/sample-release-please-manifest/commit/af24686d09991c5b6e5be3196a4d5a446d67d5d0))
+* **repo:** jest config ([4940ccc](https://github.com/iamzaker/sample-release-please-manifest/commit/4940ccc2b14d8f9bfba6bc2357cc7029edb559e9))
+* **repo:** license update ([50ad24e](https://github.com/iamzaker/sample-release-please-manifest/commit/50ad24e01c24887e30a0c3ee93af84b97def8226))
+* **repo:** workflows & configs ([39ccb0d](https://github.com/iamzaker/sample-release-please-manifest/commit/39ccb0dc8e71c84ee0452e716a86d3144486fde7))
+
+
+### Miscellaneous Chores
+
+* **release:** plugin updates ([#53](https://github.com/iamzaker/sample-release-please-manifest/issues/53)) ([6524e09](https://github.com/iamzaker/sample-release-please-manifest/commit/6524e09c00534d9822eef4044fe90124ca5ece84))
+* **release:** updates to config file ([008c95d](https://github.com/iamzaker/sample-release-please-manifest/commit/008c95db00f4529d179c0667f63141c1bf0884d7))
+* **repo:** add node workspace plugin ([#37](https://github.com/iamzaker/sample-release-please-manifest/issues/37)) ([7fece61](https://github.com/iamzaker/sample-release-please-manifest/commit/7fece61a3346327ac7c230f7f95d5dbfea63589c))
+* **repo:** additional plugin config ([#39](https://github.com/iamzaker/sample-release-please-manifest/issues/39)) ([98b6611](https://github.com/iamzaker/sample-release-please-manifest/commit/98b6611c69a6989794fce6ebd67bba24f8b37d89))
+* **repo:** config changes ([#49](https://github.com/iamzaker/sample-release-please-manifest/issues/49)) ([f790458](https://github.com/iamzaker/sample-release-please-manifest/commit/f790458365d40ebd8e526a12dca93185dec08b9b))
+* **repo:** Config updates ([#71](https://github.com/iamzaker/sample-release-please-manifest/issues/71)) ([1892a15](https://github.com/iamzaker/sample-release-please-manifest/commit/1892a153962a77f4eb9a343694c7c02a79bb2ece))
+* **repo:** Correct work step ([#45](https://github.com/iamzaker/sample-release-please-manifest/issues/45)) ([564326c](https://github.com/iamzaker/sample-release-please-manifest/commit/564326c9145510f34fef70d349a290ee0b36eca8))
+* **repo:** include path ([#28](https://github.com/iamzaker/sample-release-please-manifest/issues/28)) ([973754c](https://github.com/iamzaker/sample-release-please-manifest/commit/973754c38bff32dc9391faa80ab29ec711d652de))
+* **repo:** minor updates to plugins and workflow ([#65](https://github.com/iamzaker/sample-release-please-manifest/issues/65)) ([e60078d](https://github.com/iamzaker/sample-release-please-manifest/commit/e60078dd94ccd435db1fd5a4ceed9ea08b9d613c))
+* **repo:** nestjs-app-in-config ([#55](https://github.com/iamzaker/sample-release-please-manifest/issues/55)) ([bfe32c2](https://github.com/iamzaker/sample-release-please-manifest/commit/bfe32c2f8ef3d1bf5667a3caec2c5e0cfcecbfa2))
+* **repo:** plugin at root, workflow checks ([#59](https://github.com/iamzaker/sample-release-please-manifest/issues/59)) ([e3d19cf](https://github.com/iamzaker/sample-release-please-manifest/commit/e3d19cf2bffe79d20297a29956d9bdc3835cc677))
+* **repo:** plugin updates ([#63](https://github.com/iamzaker/sample-release-please-manifest/issues/63)) ([ff0affe](https://github.com/iamzaker/sample-release-please-manifest/commit/ff0affe13e2906055a409c3b0d2a0a79ebb7ba08))
+* **repo:** release 0.0.1 ([7112cce](https://github.com/iamzaker/sample-release-please-manifest/commit/7112cce2795eb1a24c0b7b19de7e8dbf91e62a42))
+* **repo:** release 0.0.1 ([d0fa2cb](https://github.com/iamzaker/sample-release-please-manifest/commit/d0fa2cba5644cee5dee82ca5cc5f369485c48daf))
+* **repo:** release 0.0.1 ([44248ae](https://github.com/iamzaker/sample-release-please-manifest/commit/44248aebaa21275140aeacb7b8e8352f2d86d226))
+* **repo:** release 0.0.1 ([18c2764](https://github.com/iamzaker/sample-release-please-manifest/commit/18c276435ef41794ca3e4f7df3828280c9657387))
+* **repo:** release 0.0.1 ([d12eef8](https://github.com/iamzaker/sample-release-please-manifest/commit/d12eef8ea3831471f85d88050e987c886c9c5777))
+* **repo:** release 0.0.1 ([0c17c7c](https://github.com/iamzaker/sample-release-please-manifest/commit/0c17c7c96a20a3c82205711bd8b5d874d5f93842))
+* **repo:** release 0.0.1 ([2a49669](https://github.com/iamzaker/sample-release-please-manifest/commit/2a496691156cb48cbd7c9da2417b267badbaeb9a))
+* **repo:** release 0.0.1 ([15c633d](https://github.com/iamzaker/sample-release-please-manifest/commit/15c633dc4c4ab5f97a0fdea5073c50a71f0e1c1b))
+* **repo:** release 0.0.1 ([256758b](https://github.com/iamzaker/sample-release-please-manifest/commit/256758b046abfe82471a364523db3699f1d4cd42))
+* **repo:** release 0.0.1 ([ade524c](https://github.com/iamzaker/sample-release-please-manifest/commit/ade524c9daf940ba3d590699767119206b6ca323))
+* **repo:** release 0.0.1 ([38e4d9a](https://github.com/iamzaker/sample-release-please-manifest/commit/38e4d9a59d6d623d39efed116887f8bd2284c830))
+* **repo:** release 0.0.1 ([0ab0baa](https://github.com/iamzaker/sample-release-please-manifest/commit/0ab0baac75999c957831f561da1e478ecf8ae40c))
+* **repo:** release 0.0.1 ([63c84f1](https://github.com/iamzaker/sample-release-please-manifest/commit/63c84f1f9b18083f3f7948aa1493b9fec5f5e938))
+* **repo:** release 0.0.1 ([9b70dd9](https://github.com/iamzaker/sample-release-please-manifest/commit/9b70dd996117753d7e124faa273d6c7f2f59f7a2))
+* **repo:** release 0.0.1 ([16bb9e8](https://github.com/iamzaker/sample-release-please-manifest/commit/16bb9e89332d0a347b6ded5800ea21f6ff3fc728))
+* **repo:** release 0.0.1 ([1581c1d](https://github.com/iamzaker/sample-release-please-manifest/commit/1581c1d029c08403b272b9170b3925ab1cedddc5))
+* **repo:** release 0.0.1 ([6d5e87f](https://github.com/iamzaker/sample-release-please-manifest/commit/6d5e87fd0e00d79f55ef38e79c546db7ea3b5941))
+* **repo:** release 0.0.1 ([1fefd5f](https://github.com/iamzaker/sample-release-please-manifest/commit/1fefd5f0a9e31e25500a8b3183c776c8a23e4613))
+* **repo:** release 0.0.1 ([3f9dcb3](https://github.com/iamzaker/sample-release-please-manifest/commit/3f9dcb3fb3db5f3019c74a7eed67b04074628257))
+* **repo:** Remove Check ([#47](https://github.com/iamzaker/sample-release-please-manifest/issues/47)) ([7579c1a](https://github.com/iamzaker/sample-release-please-manifest/commit/7579c1aad659d7adf35610890699f11d69b03072))
+* **repo:** Removed path in workflow ([#73](https://github.com/iamzaker/sample-release-please-manifest/issues/73)) ([b772e38](https://github.com/iamzaker/sample-release-please-manifest/commit/b772e38e5597989f39ebf3bb26f39b569b03f77c))
+* **repo:** update manifest ([#41](https://github.com/iamzaker/sample-release-please-manifest/issues/41)) ([9ef9d37](https://github.com/iamzaker/sample-release-please-manifest/commit/9ef9d377c76ae2b7dff009ad1d004c9297b0ff4e))
+* **repo:** update path to package ([#29](https://github.com/iamzaker/sample-release-please-manifest/issues/29)) ([adba11d](https://github.com/iamzaker/sample-release-please-manifest/commit/adba11de042e114d5e61894b99482029880986ca))
+* **repo:** update release workflow ([#35](https://github.com/iamzaker/sample-release-please-manifest/issues/35)) ([09b3054](https://github.com/iamzaker/sample-release-please-manifest/commit/09b3054ca59c6c1e7d92d8e1196deeda8c5860fc))
+* **repo:** update release workflow ([#51](https://github.com/iamzaker/sample-release-please-manifest/issues/51)) ([4a05566](https://github.com/iamzaker/sample-release-please-manifest/commit/4a055668b68c8f96696fcc20514d1649de0605c2))
+* **repo:** update release-please config ([#69](https://github.com/iamzaker/sample-release-please-manifest/issues/69)) ([34606d2](https://github.com/iamzaker/sample-release-please-manifest/commit/34606d2138b855634c69aecc1d29bdffe70dbbda))
+* **repo:** update release-please-config.json ([#57](https://github.com/iamzaker/sample-release-please-manifest/issues/57)) ([ae2f9d8](https://github.com/iamzaker/sample-release-please-manifest/commit/ae2f9d8e38d67f095724aa944d33000bd411b1d0))
+* **repo:** update release-please-config.json ([#67](https://github.com/iamzaker/sample-release-please-manifest/issues/67)) ([b6cc4ae](https://github.com/iamzaker/sample-release-please-manifest/commit/b6cc4ae37ea0c20138739b26997882df8f30a704))
+* **repo:** update version to 1.0.0 ([db81e5b](https://github.com/iamzaker/sample-release-please-manifest/commit/db81e5b0c8daa4abaa20ebffa56221d27c7e68c4))
