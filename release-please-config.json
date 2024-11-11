@@ -8,7 +8,15 @@
             "release-type": "node",            
             "changelog-path": "CHANGELOG.md",
             "extra-files": [
-               "./starters/nestjs-startup-app/package.json", "package-lock.json"
+               "package-lock.json"
+            ]
+        },
+        "starters/nestjs-startup-app": {
+            "component": "pkgNestjsStartupApp",
+            "release-type": "node",
+            "changelog-path": "CHANGELOG.md",
+            "extra-files": [
+                "package-lock.json"
             ]
         }
     },
@@ -21,7 +29,7 @@
         {
             "type": "linked-versions",
             "groupName": "linked-group",
-            "components": ["pkgHelloWorldUtil"]
+            "components": ["pkgHelloWorldUtil", "pkgNestjsStartupApp"]
         }
     ],
     "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
