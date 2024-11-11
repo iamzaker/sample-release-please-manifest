@@ -3,19 +3,21 @@
     "include-v-in-tag": true,
     "tag-separator": "@",
     "separate-pull-requests": true,
+    "always-link-local": true,
     "packages":{
         "packages/hello-world-util": {                       
             "release-type": "node",            
-            "always-link-local": true,
             "changelog-path": "CHANGELOG.md",
-            "path": "packages/hello-world-util",
-            "versioning-strategy": "auto",
-            "intial-version": "0.0.1"
+            "path": "starters/nestjs-startup-app",
+            "extra-files": [
+                {
+                    "type": "json",
+                    "path": "starters/nestjs-startup-app/package.json"
+                }
+            ]
         },
        "starters/nestjs-startup-app": {
-            "always-link-local": true,
-            "path": "starters/nestjs-startup-app",
-            "skip-github-release": true
+            "path": "starters/nestjs-startup-app"
        }
     },
     "plugins":[
