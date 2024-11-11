@@ -14,9 +14,9 @@ jobs:
           id: release
           with:
             token: ${{secrets.GITHUB_TOKEN}}
-            release-type: node
-            config-file: release-please-config.json
-            manifest-file: .release-please-manifest.json
+            # release-type: node
+            # config-file: release-please-config.json
+            # manifest-file: .release-please-manifest.json
             # path: | 
             #     packages/hello-world-util
         # The logic below handles the npm publication:
