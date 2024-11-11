@@ -4,12 +4,12 @@
     "always-link-local": true,
     "packages":{
         "packages/hello-world-util": {  
-            "component": "pkgHelloWorldUtil",                     
+            "component": "hello-world-util",                     
             "release-type": "node",            
             "changelog-path": "CHANGELOG.md"
         },
         "starters/nestjs-startup-app": {
-            "component": "pkgNestjsStartupApp",
+            "component": "nestjs-startup-app",
             "release-type": "node",
             "changelog-path": "CHANGELOG.md"
         }
@@ -23,7 +23,7 @@
         {
             "type": "linked-versions",
             "groupName": "linked-group",
-            "components": ["pkgHelloWorldUtil", "pkgNestjsStartupApp"]
+            "components": ["hello-world-util", "nestjs-startup-app"]
         }
     ],
     "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
