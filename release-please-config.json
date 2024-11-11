@@ -8,17 +8,10 @@
         "packages/hello-world-util": {                       
             "release-type": "node",            
             "changelog-path": "CHANGELOG.md",
-            "path": "starters/nestjs-startup-app",
             "extra-files": [
-                {
-                    "type": "json",
-                    "path": "starters/nestjs-startup-app/package.json"
-                }
+               "starters/nestjs-startup-app/package.json"
             ]
-        },
-       "starters/nestjs-startup-app": {
-            "path": "starters/nestjs-startup-app"
-       }
+        }
     },
     "plugins":[
         {
