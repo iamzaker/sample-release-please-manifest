@@ -16,11 +16,6 @@
     },
     "plugins":[
         {
-            "type": "node-workspace",
-            "updateAllPackages": true,
-            "updatePeerDependencies": true
-        },
-        {
             "type": "linked-versions",
             "groupName": "linked-group",
             "components": ["pkgHelloWorldUtil", "pkgNestjsStartupApp"]
