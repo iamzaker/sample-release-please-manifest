@@ -6,18 +6,12 @@
         "packages/hello-world-util": {  
             "component": "pkgHelloWorldUtil",                     
             "release-type": "node",            
-            "changelog-path": "CHANGELOG.md",
-            "extra-files": [
-               "package-lock.json"
-            ]
+            "changelog-path": "CHANGELOG.md"
         },
         "starters/nestjs-startup-app": {
             "component": "pkgNestjsStartupApp",
             "release-type": "node",
-            "changelog-path": "CHANGELOG.md",
-            "extra-files": [
-                "package-lock.json"
-            ]
+            "changelog-path": "CHANGELOG.md"
         }
     },
     "plugins":[
