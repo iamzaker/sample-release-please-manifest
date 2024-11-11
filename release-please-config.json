@@ -1,7 +1,6 @@
 {
     "include-v-in-tag": true,
     "tag-separator": "@",
-    "separate-pull-requests": true,
     "always-link-local": true,
     "packages":{
         "packages/hello-world-util": {  
@@ -9,7 +8,7 @@
             "release-type": "node",            
             "changelog-path": "CHANGELOG.md",
             "extra-files": [
-               "starters/nestjs-startup-app/package.json", "package-lock.json"
+               "./starters/nestjs-startup-app/package.json", "package-lock.json"
             ]
         }
     },
