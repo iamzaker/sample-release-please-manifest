@@ -20,18 +20,24 @@ jobs:
             path: | 
                 packages/hello-world-util
         # The logic below handles the npm publication:
-        - uses: actions/checkout@v4
+        - name: Checkout 
+          uses: actions/checkout@v4
           # these if statements ensure that a publication only occurs when
           # a new release is created:
+        - name: Setup Node.js
           if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
-        - uses: actions/setup-node@v4
+          uses: actions/setup-node@v4
           with:
-            node-version: 12
+            node-version: lts/*
             registry-url: 'https://registry.npmjs.org'
+        
+        - name: Install dependencies
           if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
-        - run: npm ci
+          run: npm install
+        
+        - name: Publish
           if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
-        - run: npx lerna publish from-package --no-push --no-private --yes
+          run: npx lerna publish from-package --no-push --no-private --yes
           env:
             NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
-            if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
+            # if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
