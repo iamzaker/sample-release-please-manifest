@@ -11,7 +11,8 @@
         "starters/nestjs-startup-app": {
             "component": "nestjs-startup-app",
             "release-type": "node",
-            "changelog-path": "CHANGELOG.md"
+            "changelog-path": "CHANGELOG.md",
+            "skip-github-release": true
         }
     },
     "plugins":[
