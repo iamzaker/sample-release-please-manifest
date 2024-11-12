@@ -11,8 +11,7 @@
         "starters/nestjs-startup-app": {
             "component": "nestjs-startup-app",
             "release-type": "node",
-            "changelog-path": "CHANGELOG.md",
-            "skip-github-release": true
+            "changelog-path": "CHANGELOG.md"
         }
     },
     "plugins":[
@@ -20,11 +19,6 @@
             "type": "node-workspace",
             "updateAllPackages": true,
             "updatePeerDependencies": true
-        },
-        {
-            "type": "linked-versions",
-            "groupName": "linked-group",
-            "components": ["hello-world-util", "nestjs-startup-app"]
         }
     ],
     "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"

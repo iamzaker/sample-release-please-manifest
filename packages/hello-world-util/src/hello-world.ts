@@ -1,5 +1,5 @@
 
-export const helloWorld = () => 'Hello World!';
+export const helloWorld = () => 'Hello World from package!';
 
 export const formatDate = (date: Date, format: string): string => {
     const year = date.getFullYear();
