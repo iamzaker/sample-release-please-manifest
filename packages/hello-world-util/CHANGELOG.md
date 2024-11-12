@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.3](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.2...hello-world-util@v0.0.3) (2024-11-12)
+
+
+### Bug Fixes
+
+* **hello-world-util:** minor change to bump ver ([#92](https://github.com/iamzaker/sample-release-please-manifest/issues/92)) ([da76423](https://github.com/iamzaker/sample-release-please-manifest/commit/da7642312820e1e41fa7e2f99acc377e300e92c0))
+
 ## [0.0.2](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.1...hello-world-util@v0.0.2) (2024-11-12)
 
 
