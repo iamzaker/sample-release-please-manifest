@@ -1,4 +1,4 @@
 {
-    "packages/hello-world-util": "0.0.1",
-    "starters/nestjs-startup-app": "0.0.1"
+    "packages/hello-world-util": "0.0.2",
+    "starters/nestjs-startup-app": "0.0.2"
 }
