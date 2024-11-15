@@ -7,19 +7,52 @@ on:
     branches:
         - main
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v4
+  changes:
+    name: Identify file changes
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+      contents: read
+    outputs:
+      paths: ${{ steps.filter.outputs.changes}}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            date-helpers:
+              - 'packages/date-helpers/**'
+            hello-world-util:
+              - 'packages/hello-world-util/**'
+            nestjs-startup-app:
+              - 'packages/nestjs-startup-app/**''
+  sonar: 
+    name: SonarQube Scan
+    needs: changes
+    strategy:
+      matrix:
+        include:
+          - filter: date-helpers
+            projectDirectory: packages/date-helpers
+            nodeVersion: lts/*
+          - filter: hello-world-util
+            projectDirectory: packages/hello-world-util
+            nodeVersion: lts/*
+          - filter: nestjs-startup-app
+            projectDirectory: starters/nestjs-startup-app
+            nodeVersion: lts/*
+    uses: ./.github/workflows/workflow.yml
+    with:
+      projectDirectory: ${{ matrix.projectDirectory }}
+      nodeVersion: ${{ matrix.nodeVersion }}
+      registryUrl: 'https://registry.npmjs.org'
+      filters: ${{ toJson(needs.changes.outputs.paths) }}
+      filter: ${{ matrix.filter }}
+    secrets:
+      githubToken: ${{ secrets.GITHUB_TOKEN }}
+      npmToken: ${{ secrets.NPM_TOKEN }}
+
+     
+
             
-            - name: Setup Node.js
-              uses: actions/setup-node@v4
-              with:
-                node-version: 'lts/*'
-            
-            - name: Install dependencies
-              run: npm install
-            
-            - name: Build
-              run: npm run build
