@@ -1,18 +1,18 @@
 name: Setup Project
-description: Setup a nodejs project with npm dependencies and cache.
+description: 'Setup a nodejs project with npm dependencies and cache.'
 inputs:
-    project-directory:
-        description: 'The directory of the project to setup.'
-        required: true
-    node-version:
-        description: 'The version of node to use.'
-        required: true
-    registry-url:
-        description: 'The registry to use for npm.'
-        required: false
-    npmToken:
-        description: 'The npm token to use for authentication.'
-        required: false
+  project-directory:
+    description: 'The directory of the project to setup.'
+    required: true
+  node-version:
+    description: 'The version of node to use.'
+    required: true
+  registry-url:
+    description: 'The registry to use for npm.'
+    required: false
+  npmToken:
+    description: 'The npm token to use for authentication.'
+    required: false
 runs:
    using: 'composite'
    steps:
