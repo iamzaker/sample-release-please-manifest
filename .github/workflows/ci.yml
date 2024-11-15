@@ -26,7 +26,7 @@ jobs:
             hello-world-util:
               - 'packages/hello-world-util/**'
             nestjs-startup-app:
-              - 'packages/nestjs-startup-app/**''
+              - 'starters/nestjs-startup-app/**''
   sonar: 
     name: SonarQube Scan
     needs: changes
@@ -47,7 +47,7 @@ jobs:
       projectDirectory: ${{ matrix.projectDirectory }}
       nodeVersion: ${{ matrix.nodeVersion }}
       registryUrl: 'https://registry.npmjs.org'
-      filters: ${{ toJson(needs.changes.outputs.paths) }}
+      filters: ${{ needs.changes.outputs.paths }}
       filter: ${{ matrix.filter }}
     secrets:
       githubToken: ${{ secrets.GITHUB_TOKEN }}
