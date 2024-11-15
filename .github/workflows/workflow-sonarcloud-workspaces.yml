@@ -28,7 +28,7 @@ jobs:
           fetch-depth: 0
         
       - name: Setup Project
-        uses: ./github/actions
+        uses: ./.github/actions/setup-node-project
         with:
            projectDirectory: ${{inputs.projectDirectory}}
            nodeVersion: ${{inputs.nodeVersion}}

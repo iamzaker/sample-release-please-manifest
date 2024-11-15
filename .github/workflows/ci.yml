@@ -41,7 +41,7 @@ jobs:
           - filter: nestjs-startup-app
             projectDirectory: starters/nestjs-startup-app
             nodeVersion: lts/*
-    uses: ./.github/workflows/workflow.yml
+    uses: ./.github/workflows/workflow-sonarcloud-workspaces.yml
     with:
       projectDirectory: ${{ matrix.projectDirectory }}
       nodeVersion: ${{ matrix.nodeVersion }}
