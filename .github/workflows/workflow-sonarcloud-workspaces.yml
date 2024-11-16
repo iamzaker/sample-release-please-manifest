@@ -2,26 +2,26 @@ name: SC Scan - Workspaces
 on:
  workflow_call:
     inputs:
-        projectDirectory:
-            required: true
-            type: string
-        nodeVersion:
-            required: true
-            type: string
-        registryUrl:
-            required: false
-            type: string
-        filters:
-            required: false
-            type: string
+      projectDirectory:
+          required: true
+          type: string
+      nodeVersion:
+          required: true
+          type: string
+      registryUrl:
+          required: false
+          type: string
+      filters:
+          required: false
+          type: string
     secrets:
-            githubToken:
-                required: true
+      githubToken:
+        required: true
 jobs:
   lint:
     name: Lint for ${{ inputs.projectDirectory }}
     runs-on: ubuntu-latest
-    if: ${{ !inputs.filters || contains(fromJSON(inputs.filters), inputs.filter) }}
+    if: ${{ !inputs.filters || contains(fromJSON(inputs.filters), inputs.projectDirectory) }}
     steps:
       - uses: actions/checkout@v4
         with:
