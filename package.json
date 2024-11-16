@@ -8,9 +8,9 @@
   ],
   "type": "module",
   "scripts": {
-    "prepare": "husky",
     "test": "lerna run test",
-    "build": "rm -rf dist && lerna run build"
+    "build": "rm -rf dist && lerna run build",
+    "prepare": "node -e \"if (process.env.NODE_ENV !== 'production'){process.exit(1)} \" || husky install"
   },
   "author": "",
   "license": "ISC",
