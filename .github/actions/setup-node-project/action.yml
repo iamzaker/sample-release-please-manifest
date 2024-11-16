@@ -21,7 +21,7 @@ runs:
        with:
          node-version: ${{inputs.nodeVersion}}
          cache: npm
-         cache-dependency-path: ${{ inputs.projectDirectory }}/package-lock.json
+         cache-dependency-path: ./package-lock.json
         
      - name: Install project dependencies
        run: | 
