@@ -8,7 +8,7 @@
   ],
   "type": "module",
   "scripts": {
-    "prepare": "husky && husky install",
+    "prepare": "husky",
     "test": "lerna run test",
     "build": "rm -rf dist && lerna run build"
   },
