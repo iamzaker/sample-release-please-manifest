@@ -34,13 +34,13 @@ jobs:
         include:
           - filter: date-helpers
             projectDirectory: packages/date-helpers
-            nodeVersion: lts/*
+            nodeVersion: 'lts/*'
           - filter: hello-world-util
             projectDirectory: packages/hello-world-util
-            nodeVersion: lts/*
+            nodeVersion: 'lts/*'
           - filter: nestjs-startup-app
             projectDirectory: starters/nestjs-startup-app
-            nodeVersion: lts/*
+            nodeVersion: 'lts/*'
     uses: ./.github/workflows/workflow-sonarcloud-workspaces.yml
     with:
       projectDirectory: ${{ matrix.projectDirectory }}
