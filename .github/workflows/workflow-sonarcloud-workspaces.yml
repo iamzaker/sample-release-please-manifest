@@ -8,7 +8,7 @@ on:
       nodeVersion:
           required: true
           type: string
-      registryUrl:
+      registry-url:
           required: false
           type: string
       filters:

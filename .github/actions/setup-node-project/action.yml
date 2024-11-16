@@ -16,16 +16,17 @@ inputs:
 runs:
    using: 'composite'
    steps:
-     - name: Use Node ${{inputs.nodeVersion}}
+     - name: Use Node ${{ inputs.nodeVersion }}
        uses: actions/setup-node@v4
        with:
          node-version: ${{inputs.nodeVersion}}
          cache: npm
-         cache-dependency-path: ./package-lock.json
+         cache-dependency-path: ${{ inputs.projectDirectory }}/package-lock.json
         
      - name: Install project dependencies
        run: | 
         npm ci
+        echo "Project directory printed wantedly: ${{inputs.projectDirectory}}"
         echo "${{ toJson(inputs) }}"
        shell: bash
        working-directory: ${{inputs.projectDirectory}}

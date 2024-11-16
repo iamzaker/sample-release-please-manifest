@@ -45,7 +45,7 @@ jobs:
     with:
       projectDirectory: ${{ matrix.projectDirectory }}
       nodeVersion: ${{ matrix.nodeVersion }}
-      registryUrl: 'https://registry.npmjs.org'
+      registry-url: 'https://registry.npmjs.org'
       filters: ${{ needs.changes.outputs.paths }}
       filter: ${{ matrix.filter }}
     secrets:
