@@ -24,6 +24,8 @@ runs:
          cache-dependency-path: ./package-lock.json
         
      - name: Install project dependencies
-       run: npm ci
+       run: | 
+        npm ci
+        echo "${{ toJson(inputs) }}"
        shell: bash
        working-directory: ${{inputs.projectDirectory}}

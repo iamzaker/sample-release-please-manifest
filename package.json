@@ -8,9 +8,9 @@
   ],
   "type": "module",
   "scripts": {
+    "prepare": "husky",
     "test": "lerna run test",
-    "build": "rm -rf dist && lerna run build",
-    "prepare": "node -e \"if (process.env.NODE_ENV !== 'production'){process.exit(1)} \" || husky install"
+    "build": "rm -rf dist && lerna run build"
   },
   "author": "",
   "license": "ISC",
@@ -22,7 +22,6 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@types/jest": "^29.5.14",
-    "husky": "^9.1.6",
     "jest": "^29.7.0",
     "lerna": "^8.1.9",
     "ts-jest": "^29.2.5",
