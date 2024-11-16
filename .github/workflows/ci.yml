@@ -25,7 +25,7 @@ jobs:
             hello-world-util:
               - 'packages/hello-world-util/**'
             nestjs-startup-app:
-              - 'starters/nestjs-startup-app/**''
+              - 'starters/nestjs-startup-app/**'
   sonar: 
     name: SonarQube Scan
     needs: changes
@@ -50,7 +50,7 @@ jobs:
       filter: ${{ matrix.filter }}
     secrets:
       githubToken: ${{ secrets.GITHUB_TOKEN }}
-      npmToken: ${{ secrets.NPM_TOKEN }}
+      # npmToken: ${{ secrets.NPM_TOKEN }}
 
      
 
