@@ -21,11 +21,11 @@ runs:
        with:
          node-version: ${{inputs.nodeVersion}}
          cache: npm
-         cache-dependency-path: ./package-lock.json
+         cache-dependency-path: ${{inputs.projectDirectory}}/package-lock.json
         
      - name: Install project dependencies
        run: | 
-        npm ci
+        npm ci --workspace=${{inputs.projectDirectory}}
         echo "Printing details from input wantedly: ${{inputs.projectDirectory}}"
         echo "${{ toJson(inputs) }}"
        shell: bash
