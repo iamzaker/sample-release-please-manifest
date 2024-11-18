@@ -33,7 +33,7 @@ jobs:
       - name: Setup Project
         uses: ./.github/actions/setup-node-project
         with:
-           projectDirectory: ${{inputs.projectDirectory}}
+           projectDirectory: "."
            nodeVersion: ${{inputs.nodeVersion}}
       
       - name: Lint Sonar
