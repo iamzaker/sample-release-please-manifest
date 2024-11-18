@@ -25,7 +25,7 @@ runs:
         
      - name: Install project dependencies
        run: | 
-        npm ci --workspace=${{inputs.projectDirectory}}
+        npm ci
         echo "Printing details from input wantedly: ${{inputs.projectDirectory}}"
         echo "${{ toJson(inputs) }}"
        shell: bash
