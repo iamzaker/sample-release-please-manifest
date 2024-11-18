@@ -37,12 +37,12 @@ jobs:
            nodeVersion: ${{inputs.nodeVersion}}
       
       - name: Lint Sonar
-        run: npm run --workspace=${{ inputs.projectDirectory }} --if-present lint || [ $? -ne 2 ]
+        run: npm run --if-present --workspace=${{ inputs.projectDirectory }} lint || [ $? -ne 2 ]
         working-directory: ${{inputs.projectDirectory}}
 
       - name: Unit test
         run: |
-         npm run --workspace=${{ inputs.projectDirectory }} --if-present npm test:cov || echo "test script not found, skipping."
+         npm run --if-present --workspace=${{ inputs.projectDirectory }} npm test:cov || echo "test script not found, skipping."
         working-directory: ${{inputs.projectDirectory}}
 
         
