@@ -6,7 +6,14 @@
         "packages/hello-world-util": {  
             "component": "hello-world-util",                     
             "release-type": "node",            
-            "changelog-path": "CHANGELOG.md"
+            "changelog-path": "CHANGELOG.md",
+            "path": "packages/hello-world-util"
+        },
+        "packages/date-helpers": {  
+            "component": "date-helpers",                     
+            "release-type": "node",            
+            "changelog-path": "CHANGELOG.md",
+            "path": "packages/date-helpers"
         },
         "starters/nestjs-startup-app": {
             "component": "nestjs-startup-app",

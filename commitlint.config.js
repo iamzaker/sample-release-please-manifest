@@ -11,6 +11,7 @@ export default {
         "always",
         [
           "hello-world-util",
+          "date-helpers",
           "nestjs-startup-app",
           "repo"
         ],

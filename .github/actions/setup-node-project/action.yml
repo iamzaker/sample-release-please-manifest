@@ -1,0 +1,32 @@
+name: Setup Project
+description: 'Setup a nodejs project with npm dependencies and cache.'
+inputs:
+  projectDirectory:
+    description: 'The directory of the project to setup.'
+    required: true
+  nodeVersion:
+    description: 'The version of node to use.'
+    required: true
+  registry-url:
+    description: 'The registry to use for npm.'
+    required: false
+  npmToken:
+    description: 'The npm token to use for authentication.'
+    required: false
+runs:
+   using: 'composite'
+   steps:
+     - name: Use Node ${{ inputs.nodeVersion }}
+       uses: actions/setup-node@v4
+       with:
+         node-version: ${{inputs.nodeVersion}}
+         cache: npm
+         cache-dependency-path: ${{inputs.projectDirectory}}/package-lock.json
+        
+     - name: Install project dependencies
+       run: | 
+        npm ci
+        echo "Printing details from input wantedly: ${{inputs.projectDirectory}}"
+        echo "${{ toJson(inputs) }}"
+       shell: bash
+       working-directory: ${{inputs.projectDirectory}}

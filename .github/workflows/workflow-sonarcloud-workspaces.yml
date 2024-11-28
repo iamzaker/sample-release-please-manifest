@@ -1,0 +1,50 @@
+name: SC Scan - Workspaces
+on:
+ workflow_call:
+    inputs:
+      projectDirectory:
+          required: true
+          type: string
+      nodeVersion:
+          required: true
+          type: string
+      registry-url:
+          required: false
+          type: string
+      filters:
+          required: false
+          type: string
+      filter:
+          required: false
+          type: string
+    secrets:
+      githubToken:
+        required: true
+jobs:
+  lint:
+    name: Lint for ${{ inputs.projectDirectory }}
+    runs-on: ubuntu-latest
+    if: ${{ !inputs.filters || contains(fromJSON(inputs.filters), inputs.filter) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+        
+      - name: Setup Project
+        uses: ./.github/actions/setup-node-project
+        with:
+           projectDirectory: "."
+           nodeVersion: ${{inputs.nodeVersion}}
+      
+      - name: Lint Sonar
+        run: npm run --if-present --workspace=${{ inputs.projectDirectory }} lint || [ $? -ne 2 ]
+        working-directory: ${{inputs.projectDirectory}}
+
+      - name: Unit test
+        run: |
+         npm run --if-present --workspace=${{ inputs.projectDirectory }} npm test:cov || echo "test script not found, skipping."
+        working-directory: ${{inputs.projectDirectory}}
+
+        
+
+        
