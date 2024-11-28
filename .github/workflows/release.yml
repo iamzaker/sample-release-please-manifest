@@ -38,19 +38,10 @@ jobs:
           # if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
           if: ${{ steps.set-output-key.outputs.release_created_output == 'true'}}
           uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
           # these if statements ensure that a publication only occurs when
           # a new release is created:
-        # - name: Setup Node.js
-        #   if: ${{ steps.set-output-key.outputs.release_created_output == 'true'}}
-        #   # if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
-        #   uses: actions/setup-node@v4
-        #   with:
-        #     node-version: lts/*
-        #     registry-url: 'https://registry.npmjs.org'
-        
-        # - name: Install dependencies
-        #   if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
-        #   run: npm install
 
         - name: Set up Project
           if: ${{ steps.set-output-key.outputs.release_created_output == 'true'}}
@@ -62,7 +53,9 @@ jobs:
             npmToken: ${{ secrets.NPM_TOKEN }}
 
         - name: Build packages
+          if: ${{ steps.set-output-key.outputs.release_created_output == 'true'}}
           run: npx lerna run build
+          working-directory: ${{ github.workspace }}
         
         - name: Publish
           # if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
