@@ -46,10 +46,17 @@ jobs:
       - name: Build packages for ${{ matrix.projectDirectory }}
         run: npm run build
         working-directory: ${{ matrix.projectDirectory }}
+
+      - name: Print directory structure
+        run: |
+          echo "Directory structure after build:"
+          ls -R ${{ matrix.projectDirectory }}
+        working-directory: ${{ matrix.projectDirectory }}
+      
       
       - name: Publish
         working-directory: ${{ matrix.projectDirectory }}
         # run: npx publish from-package --contents dist --no-push --no-private --yes
-        run: npm publish --contents dist
+        run: npm publish --contents dist --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
