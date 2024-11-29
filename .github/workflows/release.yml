@@ -36,8 +36,8 @@ jobs:
 
         - name: Print release outputs
           run: |
-            echo "Release Outputs: ${{ toJson(steps.release.outputs) }}"
-            echo "Set Output Key Outputs: ${{ toJson(steps.set-output-key.outputs) }}"
+            echo "Release Outputs: '${{ toJson(steps.release.outputs) }}'"
+            echo "Set Output Key Outputs: '${{ toJson(steps.set-output-key.outputs) }}'"
 
 
         - name: Checkout 
