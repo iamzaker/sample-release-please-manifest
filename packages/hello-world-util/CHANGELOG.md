@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.15](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.14...hello-world-util@v0.0.15) (2024-11-29)
+
+
+### Bug Fixes
+
+* **hello-world:** fix the publish command ([37ebf51](https://github.com/iamzaker/sample-release-please-manifest/commit/37ebf5180db91b0dad95994f19d108189994450d))
+
 ## [0.0.14](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.13...hello-world-util@v0.0.14) (2024-11-29)
 
 
