@@ -45,6 +45,7 @@ jobs:
 
       - name: Build packages for ${{ matrix.projectDirectory }}
         run: npm run build
+        cp package.json dist/
         working-directory: ${{ matrix.projectDirectory }}
 
       - name: Print directory structure
