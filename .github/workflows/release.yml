@@ -49,10 +49,11 @@ jobs:
 
       - name: Print directory structure
         run: |
+          echo "Current directory:"
+          pwd
           echo "Directory structure after build:"
-          ls -R ${{ matrix.projectDirectory }}
+          ls -R
         working-directory: ${{ matrix.projectDirectory }}
-      
       
       - name: Publish
         working-directory: ${{ matrix.projectDirectory }}
