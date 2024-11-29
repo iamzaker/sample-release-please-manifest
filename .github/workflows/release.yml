@@ -9,12 +9,14 @@ permissions:
 jobs:
     release-please:
       runs-on: ubuntu-latest
-      strategy:
-        matrix:
-          include:
-            - projectDirectory: packages/hello-world-util
-              artifactName: pkg-hello-world-util
-              nodeVersion: 'lts/*'
+      outputs:
+        paths_release: ${{ steps.release.outputs.paths_released }}
+      # strategy:
+      #   matrix:
+      #     include:
+      #       - projectDirectory: packages/hello-world-util
+      #         artifactName: pkg-hello-world-util
+      #         nodeVersion: 'lts/*'
       steps:
         - uses: googleapis/release-please-action@v4
           id: release
@@ -29,28 +31,21 @@ jobs:
           #info: The below Setup output-key step is used to store the output of the release-please-action since we are using a matrix strategy
           # we need to get the projectDirectory name dynamically while publishing the package & we cannot do the same while publishing packages
           # Setting the same in env variable & checking in preeceding steps using the .set-output-key step would let access dynamically.
-        - name: Setup output-key
-          id: set-output-key
-          run: |
-            #  echo "release_created_output=steps.release.outputs['${{ matrix.projectDirectory }}--release_created']" >> $GITHUB_ENV 
-             echo "release_created_output=${{ steps.release.outputs['${{ matrix.projectDirectory }}--release_created'] }}" >> $GITHUB_ENV
-        - name: Print release outputs
-          run: |
-            echo "Release Outputs: '${{ toJson(steps.release.outputs) }}'"
-            echo "Set Output Key Outputs: '${{ toJson(steps.set-output-key.outputs) }}'"
-
-
-        - name: Checkout 
-          # if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
-          if: ${{ steps.set-output-key.outputs.release_created_output }}
-          uses: actions/checkout@v4
+    
+    publish-packages:
+      needs: release-please
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+         projectDirectory: ${{ fromJson(needs.release-please.outputs.paths_released) }}
+      steps:
+        - uses: actions/checkout@v4
           with:
             fetch-depth: 0
           # these if statements ensure that a publication only occurs when
           # a new release is created:
 
         - name: Set up Project
-          if: ${{ steps.set-output-key.outputs.release_created_output }}
           uses: ./.github/actions/setup-node-project
           with:
             projectDirectory: ${{ matrix.projectDirectory }}
@@ -59,14 +54,11 @@ jobs:
             npmToken: ${{ secrets.NPM_TOKEN }}
 
         - name: Build packages
-          if: ${{ steps.set-output-key.outputs.release_created_output }}
           run: npx lerna run build
-          working-directory: ${{ github.workspace }}
+          working-directory: ${{ matrix.projectDirectory }}
         
         - name: Publish
-          # if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
-          if: ${{ steps.set-output-key.outputs.release_created_output }}
-          # run: npx lerna publish from-package --no-push --no-private --yes
+          working-directory: ${{ matrix.projectDirectory }}
           run: npx lerna publish from-package --contents dist --no-push --no-private --yes
 
           env:
