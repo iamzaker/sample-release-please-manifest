@@ -1,6 +1,6 @@
 {
   "name": "@smart-utilities/hello-world-util",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Hello world util",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
