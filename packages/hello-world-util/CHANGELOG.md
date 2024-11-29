@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.11](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.10...hello-world-util@v0.0.11) (2024-11-29)
+
+
+### Bug Fixes
+
+* **repo:** fix hello-world.ts & hello-world.spec.t ([99a3a1e](https://github.com/iamzaker/sample-release-please-manifest/commit/99a3a1e6715f6b06ead40aee40beb8553a01998b))
+
 ## [0.0.10](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.9...hello-world-util@v0.0.10) (2024-11-29)
 
 
