@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.18](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.17...hello-world-util@v0.0.18) (2024-11-29)
+
+
+### Bug Fixes
+
+* **repo:** included print step ([d448852](https://github.com/iamzaker/sample-release-please-manifest/commit/d448852071b55cdfc0d926d8651ca30b7eb704e0))
+
 ## [0.0.17](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.16...hello-world-util@v0.0.17) (2024-11-29)
 
 
