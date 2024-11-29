@@ -1,73 +1,54 @@
 name: release
 on:
-    push:
-      branches:
-        - main
+  push:
+    branches:
+      - main
 permissions:
   contents: write
   pull-requests: write
+
 jobs:
-    release-please:
-      runs-on: ubuntu-latest
-      outputs:
-        paths_release: ${{ steps.release.outputs.paths_released }}
-      # strategy:
-      #   matrix:
-      #     include:
-      #       - projectDirectory: packages/hello-world-util
-      #         artifactName: pkg-hello-world-util
-      #         nodeVersion: 'lts/*'
-      steps:
-        - uses: googleapis/release-please-action@v4
-          id: release
-          with:
-            token: ${{secrets.GITHUB_TOKEN}}
-            # release-type: node
-            # config-file: release-please-config.json
-            # manifest-file: .release-please-manifest.json
-            # path: | 
-            #     packages/hello-world-util
-        - name: Debug release output
-          run: "echo 'Paths released: ${{ steps.release.outputs.paths_released }}'"
-    
-        # The logic below handles the npm publication:
-          #info: The below Setup output-key step is used to store the output of the release-please-action since we are using a matrix strategy
-          # we need to get the projectDirectory name dynamically while publishing the package & we cannot do the same while publishing packages
-          # Setting the same in env variable & checking in preeceding steps using the .set-output-key step would let access dynamically.
-    
-    publish-packages:
-      needs: release-please
-      if: ${{ needs.release-please.outputs.paths_release != '[]' }}
-      runs-on: ubuntu-latest
-      strategy:
-        matrix:
-         projectDirectory: ${{ fromJson(needs.release-please.outputs.paths_released) }}
-      steps:
-        - uses: actions/checkout@v4
-          with:
-            fetch-depth: 0
-          # these if statements ensure that a publication only occurs when
-          # a new release is created:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      paths_released: ${{ steps.release.outputs.paths_released }}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Debug release output
+        run: "echo 'Paths released: ${{ steps.release.outputs.paths_released }}'"
 
-        - name: Debug release output
-          run: "echo 'Paths released: ${{ needs.release-please.outputs.paths_released }}'"
-    
+  publish-packages:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.paths_released != '[]' }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        projectDirectory: ${{ fromJson(needs.release-please.outputs.paths_released) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-        - name: Set up Project
-          uses: ./.github/actions/setup-node-project
-          with:
-            projectDirectory: ${{ matrix.projectDirectory }}
-            nodeVersion: lts/*
-            registry-url: 'https://registry.npmjs.org'
-            npmToken: ${{ secrets.NPM_TOKEN }}
+      - name: Debug release output
+        run: "echo 'Paths released: ${{ needs.release-please.outputs.paths_released }}'"
 
-        - name: Build packages
-          run: npx lerna run build
-          working-directory: ${{ matrix.projectDirectory }}
-        
-        - name: Publish
-          working-directory: ${{ matrix.projectDirectory }}
-          run: npx lerna publish from-package --contents dist --no-push --no-private --yes
+      - name: Set up Project
+        uses: ./.github/actions/setup-node-project
+        with:
+          projectDirectory: ${{ matrix.projectDirectory }}
+          nodeVersion: lts/*
+          registry-url: 'https://registry.npmjs.org'
+          npmToken: ${{ secrets.NPM_TOKEN }}
 
-          env:
-            NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+      - name: Build packages
+        run: npx lerna run build
+        working-directory: ${{ matrix.projectDirectory }}
+      
+      - name: Publish
+        working-directory: ${{ matrix.projectDirectory }}
+        run: npx lerna publish from-package --contents dist --no-push --no-private --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
