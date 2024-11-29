@@ -22,6 +22,11 @@ runs:
          node-version: ${{inputs.nodeVersion}}
          cache: npm
          cache-dependency-path: ${{inputs.projectDirectory}}/package-lock.json
+
+     - name: Configure npm authentication
+       run: | 
+         echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+       shell: bash
         
      - name: Install project dependencies
        run: | 
