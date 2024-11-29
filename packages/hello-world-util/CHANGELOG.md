@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.17](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.16...hello-world-util@v0.0.17) (2024-11-29)
+
+
+### Bug Fixes
+
+* **hello-world:** update npm auth ([c120d47](https://github.com/iamzaker/sample-release-please-manifest/commit/c120d47d27f421e7ff1f4b90b3b653b85f984db9))
+* **hello-world:** updated inputs ([384ddc8](https://github.com/iamzaker/sample-release-please-manifest/commit/384ddc898dd5a4aa554cad6c7bcf9369c2ce8462))
+
 ## [0.0.16](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.15...hello-world-util@v0.0.16) (2024-11-29)
 
 
