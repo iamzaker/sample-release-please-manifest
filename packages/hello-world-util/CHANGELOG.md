@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.19](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.18...hello-world-util@v0.0.19) (2024-11-29)
+
+
+### Bug Fixes
+
+* **repo:** print path ([30fd1d1](https://github.com/iamzaker/sample-release-please-manifest/commit/30fd1d1686ceb65475028ca54cc315cb2dbc2c39))
+
 ## [0.0.18](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.17...hello-world-util@v0.0.18) (2024-11-29)
 
 
