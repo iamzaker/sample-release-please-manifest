@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.9](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.8...hello-world-util@v0.0.9) (2024-11-29)
+
+
+### Bug Fixes
+
+* **hello-world:** update message ([61893ae](https://github.com/iamzaker/sample-release-please-manifest/commit/61893aeda8888ba7c452a4b91febf9a040a12b11))
+
 ## [0.0.8](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.7...hello-world-util@v0.0.8) (2024-11-29)
 
 
