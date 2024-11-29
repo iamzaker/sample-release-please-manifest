@@ -45,7 +45,7 @@ jobs:
 
       - name: Build packages for ${{ matrix.projectDirectory }}
         run: npm run build
-        working-directory: "."              # ${{ matrix.projectDirectory }}
+        working-directory: ${{ matrix.projectDirectory }}
       
       - name: Publish
         working-directory: ${{ matrix.projectDirectory }}
