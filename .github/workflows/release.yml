@@ -56,8 +56,8 @@ jobs:
         working-directory: ${{ matrix.projectDirectory }}
       
       - name: Publish
-        working-directory: ${{ matrix.projectDirectory }}
+        working-directory: ${{ matrix.projectDirectory }}/dist
         # run: npx publish from-package --contents dist --no-push --no-private --yes
-        run: npm publish --contents dist --access public
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
