@@ -43,8 +43,8 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           npmToken: ${{ secrets.NPM_TOKEN }}
 
-      - name: Build packages
-        run: npx lerna run build
+      - name: Build packages for ${{ matrix.projectDirectory }}
+        run: npm run build
         working-directory: ${{ matrix.projectDirectory }}
       
       - name: Publish
