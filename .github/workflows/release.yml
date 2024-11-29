@@ -27,6 +27,9 @@ jobs:
             # manifest-file: .release-please-manifest.json
             # path: | 
             #     packages/hello-world-util
+        - name: Debug release output
+          run: "echo 'Paths released: ${{ steps.release.outputs.paths_released }}'"
+    
         # The logic below handles the npm publication:
           #info: The below Setup output-key step is used to store the output of the release-please-action since we are using a matrix strategy
           # we need to get the projectDirectory name dynamically while publishing the package & we cannot do the same while publishing packages
@@ -34,6 +37,7 @@ jobs:
     
     publish-packages:
       needs: release-please
+      if: ${{ needs.release-please.outputs.paths_release != '[]' }}
       runs-on: ubuntu-latest
       strategy:
         matrix:
@@ -44,6 +48,10 @@ jobs:
             fetch-depth: 0
           # these if statements ensure that a publication only occurs when
           # a new release is created:
+
+        - name: Debug release output
+          run: "echo 'Paths released: ${{ needs.release-please.outputs.paths_released }}'"
+    
 
         - name: Set up Project
           uses: ./.github/actions/setup-node-project
