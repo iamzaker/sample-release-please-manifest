@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.14](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.13...hello-world-util@v0.0.14) (2024-11-29)
+
+
+### Bug Fixes
+
+* **repo:** workspace free repo ([#124](https://github.com/iamzaker/sample-release-please-manifest/issues/124)) ([6cfbf42](https://github.com/iamzaker/sample-release-please-manifest/commit/6cfbf42b293cb222887bf291a96b61930b1f5921))
+
 ## [0.0.13](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.12...hello-world-util@v0.0.13) (2024-11-29)
 
 

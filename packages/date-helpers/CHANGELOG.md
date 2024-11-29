@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.11](https://github.com/iamzaker/sample-release-please-manifest/compare/date-helpers@v0.0.10...date-helpers@v0.0.11) (2024-11-29)
+
+
+### Bug Fixes
+
+* **repo:** workspace free repo ([#124](https://github.com/iamzaker/sample-release-please-manifest/issues/124)) ([6cfbf42](https://github.com/iamzaker/sample-release-please-manifest/commit/6cfbf42b293cb222887bf291a96b61930b1f5921))
+
 ## [0.0.10](https://github.com/iamzaker/sample-release-please-manifest/compare/date-helpers@v0.0.9...date-helpers@v0.0.10) (2024-11-29)
 
 ## [0.0.9](https://github.com/iamzaker/sample-release-please-manifest/compare/date-helpers@v0.0.8...date-helpers@v0.0.9) (2024-11-29)
