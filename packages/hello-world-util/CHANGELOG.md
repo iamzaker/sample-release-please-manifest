@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.10](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.9...hello-world-util@v0.0.10) (2024-11-29)
+
+
+### Bug Fixes
+
+* **hello-world:** add missing files ([b822d28](https://github.com/iamzaker/sample-release-please-manifest/commit/b822d28961b52a3c3674031c8716c096418e9c6d))
+
 ## [0.0.9](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.8...hello-world-util@v0.0.9) (2024-11-29)
 
 
