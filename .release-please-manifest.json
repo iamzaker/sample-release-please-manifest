@@ -1,5 +1,5 @@
 {
-    "packages/hello-world-util": "0.0.16",
-    "starters/nestjs-startup-app": "0.0.14",
-    "packages/date-helpers": "0.0.13"
+    "packages/hello-world-util": "0.0.17",
+    "starters/nestjs-startup-app": "0.0.15",
+    "packages/date-helpers": "0.0.14"
 }
