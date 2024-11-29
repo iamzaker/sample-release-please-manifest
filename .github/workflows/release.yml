@@ -37,6 +37,7 @@ jobs:
         - name: Print release outputs
           run: |
              echo "${{ toJson(steps.release.outputs) }}"
+             echo "${{ toJson(steps.set-output-key.outputs) }}"
 
         - name: Checkout 
           # if: ${{ steps.release.outputs['packages/hello-world-util--release_created'] }}
