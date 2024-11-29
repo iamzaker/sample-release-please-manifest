@@ -45,10 +45,10 @@ jobs:
 
       - name: Build packages for ${{ matrix.projectDirectory }}
         run: npm run build
-        working-directory: ${{ matrix.projectDirectory }}
+        working-directory: "."              # ${{ matrix.projectDirectory }}
       
       - name: Publish
         working-directory: ${{ matrix.projectDirectory }}
-        run: npx lerna publish from-package --contents dist --no-push --no-private --yes
+        run: npx publish from-package --contents dist --no-push --no-private --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
