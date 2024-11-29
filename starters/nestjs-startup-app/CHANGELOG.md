@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.0.12](https://github.com/iamzaker/sample-release-please-manifest/compare/nestjs-startup-app@v0.0.11...nestjs-startup-app@v0.0.12) (2024-11-29)
+
+
+### Bug Fixes
+
+* **repo:** workspace free repo ([#124](https://github.com/iamzaker/sample-release-please-manifest/issues/124)) ([6cfbf42](https://github.com/iamzaker/sample-release-please-manifest/commit/6cfbf42b293cb222887bf291a96b61930b1f5921))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smart-utilities/hello-world-util bumped from ^0.0.3 to ^0.0.14
+
 ## [0.0.11](https://github.com/iamzaker/sample-release-please-manifest/compare/nestjs-startup-app@v0.0.10...nestjs-startup-app@v0.0.11) (2024-11-29)
 
 
