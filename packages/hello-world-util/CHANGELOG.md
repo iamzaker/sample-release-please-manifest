@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.7](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.6...hello-world-util@v0.0.7) (2024-11-29)
+
+
+### Bug Fixes
+
+* **repo:** update release workflow ([#114](https://github.com/iamzaker/sample-release-please-manifest/issues/114)) ([1018a34](https://github.com/iamzaker/sample-release-please-manifest/commit/1018a34c6021cb30854df08594c4644779fab6e4))
+* **repo:** updated workflow with matrix separated ([#112](https://github.com/iamzaker/sample-release-please-manifest/issues/112)) ([560820f](https://github.com/iamzaker/sample-release-please-manifest/commit/560820f891ce81e6001009d6dc034e5daf5f8992))
+
 ## [0.0.6](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.5...hello-world-util@v0.0.6) (2024-11-29)
 
 
