@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.13](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.12...hello-world-util@v0.0.13) (2024-11-29)
+
+
+### Bug Fixes
+
+* **repo:** updated workflow steps ([9128495](https://github.com/iamzaker/sample-release-please-manifest/commit/91284955db5fc83d5402957adc65e6971ffd68e9))
+* **repo:** workflow update ([5e27bdd](https://github.com/iamzaker/sample-release-please-manifest/commit/5e27bddad02745a45a3e1c43ca946b913b65fc9b))
+
 ## [0.0.12](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.11...hello-world-util@v0.0.12) (2024-11-29)
 
 
