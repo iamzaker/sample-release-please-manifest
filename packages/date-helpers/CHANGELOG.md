@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.0.18](https://github.com/iamzaker/sample-release-please-manifest/compare/date-helpers@v0.0.17...date-helpers@v0.0.18) (2024-11-29)
+
 ## [0.0.17](https://github.com/iamzaker/sample-release-please-manifest/compare/date-helpers@v0.0.16...date-helpers@v0.0.17) (2024-11-29)
 
 ## [0.0.16](https://github.com/iamzaker/sample-release-please-manifest/compare/date-helpers@v0.0.15...date-helpers@v0.0.16) (2024-11-29)

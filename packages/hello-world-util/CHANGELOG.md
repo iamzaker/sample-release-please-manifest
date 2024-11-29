@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.21](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.20...hello-world-util@v0.0.21) (2024-11-29)
+
+
+### Bug Fixes
+
+* **repo:** updated code to copy package.json ([9b8108a](https://github.com/iamzaker/sample-release-please-manifest/commit/9b8108a7440293196c2cd7f2e0a976c7e3e40083))
+
 ## [0.0.20](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.19...hello-world-util@v0.0.20) (2024-11-29)
 
 
