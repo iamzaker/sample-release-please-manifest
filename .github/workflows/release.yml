@@ -32,8 +32,8 @@ jobs:
         - name: Setup output-key
           id: set-output-key
           run: |
-             echo "release_created_output=steps.release.outputs['${{ matrix.projectDirectory }}--release_created']" >> $GITHUB_ENV 
-
+            #  echo "release_created_output=steps.release.outputs['${{ matrix.projectDirectory }}--release_created']" >> $GITHUB_ENV 
+             echo "release_created_output=${{ steps.release.outputs['${{ matrix.projectDirectory }}--release_created'] }}" >> $GITHUB_ENV
         - name: Print release outputs
           run: |
             echo "Release Outputs: '${{ toJson(steps.release.outputs) }}'"
