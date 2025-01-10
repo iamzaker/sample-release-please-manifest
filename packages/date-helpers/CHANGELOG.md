@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.21](https://github.com/iamzaker/sample-release-please-manifest/compare/date-helpers@v0.0.20...date-helpers@v0.0.21) (2025-01-10)
+
+
+### Bug Fixes
+
+* **date-helper:** build-test-stage-3 ([#140](https://github.com/iamzaker/sample-release-please-manifest/issues/140)) ([8fbea19](https://github.com/iamzaker/sample-release-please-manifest/commit/8fbea193c233ac89aa5dae4704312d649aefb24f))
+
 ## [0.0.20](https://github.com/iamzaker/sample-release-please-manifest/compare/date-helpers@v0.0.19...date-helpers@v0.0.20) (2025-01-10)
 
 
