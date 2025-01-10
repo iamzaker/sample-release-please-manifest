@@ -1,0 +1,23 @@
+[
+  {
+    "name": "@smart-utilities/hello-world-util",
+    "path": "packages/hello-world-util",
+    "type": "library",
+    "dependencies": []    
+  },
+  {
+    "name": "@smart-utilities/date-helpers",
+    "path": "packages/date-helpers",
+    "type": "library",
+    "dependencies": []
+  },
+  {
+    "name": "nestjs-startup-app",
+     "path": "starters/nestjs-startup-app",
+     "type": "application",
+    "dependencies": [
+      "@smart-utilities/hello-world-util",
+      "@smart-utilities/date-helpers"
+    ]
+  }
+]
