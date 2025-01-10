@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.0.1](https://github.com/iamzaker/sample-release-please-manifest/compare/date-helpers@v0.0.21...date-helpers@v0.0.1) (2025-01-10)
+
+
+### Bug Fixes
+
+* **date-helper:** fix build issue ([#142](https://github.com/iamzaker/sample-release-please-manifest/issues/142)) ([1937358](https://github.com/iamzaker/sample-release-please-manifest/commit/193735834de45c2c7547e7a836e78647651fec7d))
+
+
+### Miscellaneous Chores
+
+* release 0.0.21 ([8cf8787](https://github.com/iamzaker/sample-release-please-manifest/commit/8cf8787c08716d943a867c5087d37e8e048a55e4))
+* release 0.0.21 ([d825630](https://github.com/iamzaker/sample-release-please-manifest/commit/d8256305be7e2554c50387e34e24a58800846b1f))
+
 ## [0.0.21](https://github.com/iamzaker/sample-release-please-manifest/compare/date-helpers@v0.0.20...date-helpers@v0.0.21) (2025-01-10)
 
 
