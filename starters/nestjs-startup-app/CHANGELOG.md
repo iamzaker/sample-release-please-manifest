@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.0.21](https://github.com/iamzaker/sample-release-please-manifest/compare/nestjs-startup-app@v0.0.20...nestjs-startup-app@v0.0.21) (2025-01-10)
+
+
+### Bug Fixes
+
+* **repo:** release-test-statge-2 ([#138](https://github.com/iamzaker/sample-release-please-manifest/issues/138)) ([8cfbab8](https://github.com/iamzaker/sample-release-please-manifest/commit/8cfbab829d982f8523224e35a163dea2e8e09410))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smart-utilities/hello-world-util bumped from ^0.0.22 to ^0.0.23
+    * @smart-utilities/date-helpers bumped from ^0.0.19 to ^0.0.20
+
 ## [0.0.20](https://github.com/iamzaker/sample-release-please-manifest/compare/nestjs-startup-app@v0.0.19...nestjs-startup-app@v0.0.20) (2025-01-10)
 
 
