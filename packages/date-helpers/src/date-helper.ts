@@ -1,5 +1,5 @@
 export const helloWorld = (): string => {
-  const message = 'Hello World from package version 0.0.19!';
+  const message = 'Hello World from package version 0.0.20!';
   console.log(message);
   return message;
 };
