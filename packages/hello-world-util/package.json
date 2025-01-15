@@ -14,5 +14,8 @@
     "access": "public"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.14"
+  }
 }
