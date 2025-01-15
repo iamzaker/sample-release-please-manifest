@@ -31,6 +31,9 @@ jobs:
     strategy:
       matrix:
         projectDirectory: ${{ fromJson(needs.release-please.outputs.paths_released) }}
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}-${{ matrix.projectDirectory }}
+      cancel-in-progress: true  # Ensures one matrix job runs at a time for each project
     steps:
       - uses: actions/checkout@v4
         with:

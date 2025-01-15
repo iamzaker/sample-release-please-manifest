@@ -5,6 +5,9 @@ on:
     types:
       - closed
 
+env:
+  GITHUB_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+
 jobs:
   update-latest-label:
     if: ${{ github.event.pull_request.merged }} # Only run if the PR is merged
@@ -17,8 +20,8 @@ jobs:
         with:
           route: GET /repos/${{ github.repository_owner }}/${{ github.event.repository.name }}/issues
           mediaType: '{"labels": "autorelease: tagged", "state": "open"}'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # env:
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Find Latest PR
         id: find-latest-pr
@@ -33,5 +36,5 @@ jobs:
         with:
           route: PATCH /repos/${{ github.repository_owner }}/${{ github.event.repository.name }}/issues/${{ env.LATEST_PR }}
           mediaType: '{"labels": ["autorelease: published"]}'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # env:
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
