@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.0.0](https://github.com/iamzaker/sample-release-please-manifest/compare/nestjs-startup-app@v0.0.9...nestjs-startup-app@v2.0.0) (2025-01-15)
+
+
+### Bug Fixes
+
+* **repo:** release-test-statge-2 ([#138](https://github.com/iamzaker/sample-release-please-manifest/issues/138)) ([8cfbab8](https://github.com/iamzaker/sample-release-please-manifest/commit/8cfbab829d982f8523224e35a163dea2e8e09410))
+* **repo:** workspace free repo ([#124](https://github.com/iamzaker/sample-release-please-manifest/issues/124)) ([6cfbf42](https://github.com/iamzaker/sample-release-please-manifest/commit/6cfbf42b293cb222887bf291a96b61930b1f5921))
+
+
+### Miscellaneous Chores
+
+* **date-helpers:** release date-helpers 1.0.0 ([#150](https://github.com/iamzaker/sample-release-please-manifest/issues/150)) ([8ec8746](https://github.com/iamzaker/sample-release-please-manifest/commit/8ec8746b466b9cdb73ab6e3772c2165d9c23c16d))
+* **hello-world-util:** release 2.0.0 ([#156](https://github.com/iamzaker/sample-release-please-manifest/issues/156)) ([0aae7ca](https://github.com/iamzaker/sample-release-please-manifest/commit/0aae7cafa70dafb8c304967579500aa4ec343a2b))
+* release 0.0.21 ([8cf8787](https://github.com/iamzaker/sample-release-please-manifest/commit/8cf8787c08716d943a867c5087d37e8e048a55e4))
+* release 0.0.21 ([d825630](https://github.com/iamzaker/sample-release-please-manifest/commit/d8256305be7e2554c50387e34e24a58800846b1f))
+* release 0.0.23 ([fd290cb](https://github.com/iamzaker/sample-release-please-manifest/commit/fd290cbc7c56b7e94f8208f2acafe3262a1b0cf3))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smart-utilities/hello-world-util bumped from ^2.0.0 to ^2.0.1
+
 ## [2.0.0](https://github.com/iamzaker/sample-release-please-manifest/compare/nestjs-startup-app@v1.0.0...nestjs-startup-app@v2.0.0) (2025-01-15)
 
 

@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.0.0](https://github.com/iamzaker/sample-release-please-manifest/compare/date-helpers@v0.0.9...date-helpers@v2.0.0) (2025-01-15)
+
+
+### Bug Fixes
+
+* **date-helper:** build-test-stage-3 ([#140](https://github.com/iamzaker/sample-release-please-manifest/issues/140)) ([8fbea19](https://github.com/iamzaker/sample-release-please-manifest/commit/8fbea193c233ac89aa5dae4704312d649aefb24f))
+* **date-helper:** fix build issue ([#142](https://github.com/iamzaker/sample-release-please-manifest/issues/142)) ([1937358](https://github.com/iamzaker/sample-release-please-manifest/commit/193735834de45c2c7547e7a836e78647651fec7d))
+* **date-helper:** test-build ([#136](https://github.com/iamzaker/sample-release-please-manifest/issues/136)) ([f5ab731](https://github.com/iamzaker/sample-release-please-manifest/commit/f5ab7311586af5faf15a2c83faccec8aef639b94))
+* **repo:** release-test-statge-2 ([#138](https://github.com/iamzaker/sample-release-please-manifest/issues/138)) ([8cfbab8](https://github.com/iamzaker/sample-release-please-manifest/commit/8cfbab829d982f8523224e35a163dea2e8e09410))
+* **repo:** workspace free repo ([#124](https://github.com/iamzaker/sample-release-please-manifest/issues/124)) ([6cfbf42](https://github.com/iamzaker/sample-release-please-manifest/commit/6cfbf42b293cb222887bf291a96b61930b1f5921))
+
+
+### Miscellaneous Chores
+
+* **date-helpers:** release date-helpers 1.0.0 ([#150](https://github.com/iamzaker/sample-release-please-manifest/issues/150)) ([8ec8746](https://github.com/iamzaker/sample-release-please-manifest/commit/8ec8746b466b9cdb73ab6e3772c2165d9c23c16d))
+* **hello-world-util:** release 2.0.0 ([#156](https://github.com/iamzaker/sample-release-please-manifest/issues/156)) ([0aae7ca](https://github.com/iamzaker/sample-release-please-manifest/commit/0aae7cafa70dafb8c304967579500aa4ec343a2b))
+* release 0.0.21 ([8cf8787](https://github.com/iamzaker/sample-release-please-manifest/commit/8cf8787c08716d943a867c5087d37e8e048a55e4))
+* release 0.0.21 ([d825630](https://github.com/iamzaker/sample-release-please-manifest/commit/d8256305be7e2554c50387e34e24a58800846b1f))
+* release 0.0.22 ([d5c21b9](https://github.com/iamzaker/sample-release-please-manifest/commit/d5c21b9b6f5c3c16b0ec9a7e08ed9854e0ede97c))
+
 ## [2.0.0](https://github.com/iamzaker/sample-release-please-manifest/compare/date-helpers@v1.0.0...date-helpers@v2.0.0) (2025-01-15)
 
 

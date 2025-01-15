@@ -1,5 +1,7 @@
 # Changelog
 
+## [2.0.1](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v2.0.0...hello-world-util@v2.0.1) (2025-01-15)
+
 ## [2.0.0](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v1.0.0...hello-world-util@v2.0.0) (2025-01-15)
 
 
