@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.0](https://github.com/iamzaker/sample-release-please-manifest/compare/date-helpers@v1.0.0...date-helpers@v2.0.0) (2025-01-15)
+
+
+### Miscellaneous Chores
+
+* **hello-world-util:** release 2.0.0 ([#156](https://github.com/iamzaker/sample-release-please-manifest/issues/156)) ([0aae7ca](https://github.com/iamzaker/sample-release-please-manifest/commit/0aae7cafa70dafb8c304967579500aa4ec343a2b))
+
 ## [1.0.0](https://github.com/iamzaker/sample-release-please-manifest/compare/date-helpers@v0.0.9...date-helpers@v1.0.0) (2025-01-15)
 
 
