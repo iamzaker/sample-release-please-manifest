@@ -6,7 +6,7 @@ on:
       - closed
 
 env:
-  GITHUB_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
 jobs:
   update-latest-label:
