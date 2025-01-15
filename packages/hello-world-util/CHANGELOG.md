@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v1.0.0...hello-world-util@v1.0.0) (2025-01-15)
+
+
+### Miscellaneous Chores
+
+* **date-helpers:** release date-helpers 1.0.0 ([#150](https://github.com/iamzaker/sample-release-please-manifest/issues/150)) ([8ec8746](https://github.com/iamzaker/sample-release-please-manifest/commit/8ec8746b466b9cdb73ab6e3772c2165d9c23c16d))
+
 ## [1.0.0](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.25...hello-world-util@v1.0.0) (2025-01-15)
 
 
