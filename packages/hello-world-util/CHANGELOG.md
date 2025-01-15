@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.25...hello-world-util@v1.0.0) (2025-01-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* update UUID generation API
+
+### Features
+
+* add generate-uuid util function ([f6df59c](https://github.com/iamzaker/sample-release-please-manifest/commit/f6df59c2ec66d19a4951fec6db2c0fcdee6e4c61))
+
 ## [0.0.25](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v0.0.24...hello-world-util@v0.0.25) (2025-01-15)
 
 
