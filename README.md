@@ -45,3 +45,37 @@ npm install --save-dev jest
 # Building up using lerna
 By default there won't be any build script in package.json so manually add it else that project would
 not be considered for build.
+git commit --allow-empty -m "chore(hello-world-util): release 0.0.26" -m "Release-As: 0.0.26"
+
+
+# CAF folder structure
+```plaintext
+root/
+├── .github/
+│   ├── actions/
+│   │   └── setup-node-project
+│   │       └──action.yml
+│   └── workflows/
+|       ├── pages.yml
+|       ├── pr-lint.yml
+|       ├── quality.yml
+|       ├── release.yml
+|       └── workflow-sonarcloud-workspaces.yml
+├── packages/
+│   ├── hello-world-util/
+│   │   ├── package.json
+│   │   └── src/
+│   ├── data-helpers/
+│   │   ├── package.json
+├── scripts/
+│   ├── link-packages.sh
+│   │── depdendency-graph.json   
+│   └── CONTRIBUTING.md
+├── starters/
+│   ├── nestjs-startup/
+│   │   ├── package.json
+│   │   └── src/
+├── .release-please-manifest.json
+│── release-please-config.json
+└── typedoc.json        
+```
