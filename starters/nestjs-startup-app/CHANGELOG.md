@@ -12,6 +12,20 @@
 
 * The following workspace dependencies were updated
   * dependencies
+    * @smart-utilities/date-helpers bumped from ^1.0.0 to ^1.0.1
+
+## [1.0.0](https://github.com/iamzaker/sample-release-please-manifest/compare/nestjs-startup-app@v0.0.24...nestjs-startup-app@v1.0.0) (2025-01-15)
+
+
+### Miscellaneous Chores
+
+* **date-helpers:** release date-helpers 1.0.0 ([#150](https://github.com/iamzaker/sample-release-please-manifest/issues/150)) ([8ec8746](https://github.com/iamzaker/sample-release-please-manifest/commit/8ec8746b466b9cdb73ab6e3772c2165d9c23c16d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
     * @smart-utilities/date-helpers bumped from ^0.0.23 to ^1.0.0
 
 ## [0.0.24](https://github.com/iamzaker/sample-release-please-manifest/compare/nestjs-startup-app@v0.0.23...nestjs-startup-app@v0.0.24) (2025-01-15)

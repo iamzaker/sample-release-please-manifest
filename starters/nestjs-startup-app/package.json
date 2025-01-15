@@ -26,7 +26,7 @@
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
     "@smart-utilities/hello-world-util": "^1.0.0",
-    "@smart-utilities/date-helpers": "^1.0.0"
+    "@smart-utilities/date-helpers": "^1.0.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
