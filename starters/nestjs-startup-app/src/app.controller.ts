@@ -1,8 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import { helloWorld } from '@smart-utilities/hello-world-util';
+import { helloWorld } from '@smart-utilities/hello-world-util/src';
 import { formatDate } from '@smart-utilities/date-helpers';
-
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
