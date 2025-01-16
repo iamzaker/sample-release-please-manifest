@@ -1,6 +1,6 @@
 {
   "name": "nestjs-startup-app",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "",
   "author": "",
   "license": "UNLICENSED",
@@ -24,7 +24,7 @@
     "@nestjs/platform-express": "^10.0.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
-    "@smart-utilities/hello-world-util": "^4.0.0",
+    "@smart-utilities/hello-world-util": "^5.0.0",
     "@smart-utilities/date-helpers": "^4.0.0"
   },
   "devDependencies": {
