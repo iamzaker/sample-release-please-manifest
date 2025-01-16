@@ -1,5 +1,21 @@
 # Changelog
 
+## [4.0.0](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v3.0.0...hello-world-util@v4.0.0) (2025-01-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* **hello-world-util:** docs added
+
+### Features
+
+* **hello-world-util:** docs added ([8afd604](https://github.com/iamzaker/sample-release-please-manifest/commit/8afd604ae05b929afa4550fee0d438f64f753ad5))
+
+
+### Miscellaneous Chores
+
+* **hello-world-util:** release 4.0.0 ([a415de8](https://github.com/iamzaker/sample-release-please-manifest/commit/a415de80e378d9af3871224f2492f5922d7dbf25))
+
 ## [3.0.0](https://github.com/iamzaker/sample-release-please-manifest/compare/hello-world-util@v2.5.0...hello-world-util@v3.0.0) (2025-01-16)
 
 
