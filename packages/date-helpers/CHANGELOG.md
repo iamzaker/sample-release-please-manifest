@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.5.0](https://github.com/iamzaker/sample-release-please-manifest/compare/date-helpers@v2.0.0...date-helpers@v2.5.0) (2025-01-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* **hello-world-util:** release 2.5.0
+
+### Features
+
+* **hello-world-util:** release 2.5.0 ([e479719](https://github.com/iamzaker/sample-release-please-manifest/commit/e47971914591a232307a906d1f1ba1948cb03d14))
+
 ## [2.0.0](https://github.com/iamzaker/sample-release-please-manifest/compare/date-helpers@v0.0.9...date-helpers@v2.0.0) (2025-01-15)
 
 
