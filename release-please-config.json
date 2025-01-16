@@ -15,6 +15,12 @@
             "changelog-path": "CHANGELOG.md",
             "path": "packages/date-helpers"
         },
+        "packages/feature-flags": {  
+            "component": "feature-flags",                     
+            "release-type": "node",            
+            "changelog-path": "CHANGELOG.md",
+            "path": "packages/feature-flags"
+        },
         "starters/nestjs-startup-app": {
             "component": "nestjs-startup-app",
             "release-type": "node",
