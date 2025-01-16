@@ -29,6 +29,14 @@
             "release-as": "1.0.0"
             
         },
+        "packages/task-queue-manager": {  
+            "component": "task-queue-manager",                     
+            "release-type": "node",            
+            "changelog-path": "packages/task-queue-manager/CHANGELOG.md",
+            "path": "packages/task-queue-manager",
+            "release-as": "1.0.0"
+            
+        },
         "starters/nestjs-startup-app": {
             "component": "nestjs-startup-app",
             "release-type": "node",
