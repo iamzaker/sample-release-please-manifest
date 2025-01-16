@@ -1,0 +1,20 @@
+{
+  "name": "@smart-utilities/task-queue-manager",
+  "version": "1.0.0",
+  "description": "Task Queue Manager",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --verbose",
+    "test:cov": "jest --coverage",
+    "build": "tsc"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.14"
+  }
+}
