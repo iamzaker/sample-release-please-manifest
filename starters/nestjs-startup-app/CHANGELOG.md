@@ -1,5 +1,20 @@
 # Changelog
 
+## [4.0.0](https://github.com/iamzaker/sample-release-please-manifest/compare/nestjs-startup-app@v3.0.0...nestjs-startup-app@v4.0.0) (2025-01-16)
+
+
+### Miscellaneous Chores
+
+* **hello-world-util:** release 4.0.0 ([a415de8](https://github.com/iamzaker/sample-release-please-manifest/commit/a415de80e378d9af3871224f2492f5922d7dbf25))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smart-utilities/hello-world-util bumped from ^3.0.0 to ^4.0.0
+    * @smart-utilities/date-helpers bumped from ^3.0.0 to ^4.0.0
+
 ## [3.0.0](https://github.com/iamzaker/sample-release-please-manifest/compare/nestjs-startup-app@v2.5.0...nestjs-startup-app@v3.0.0) (2025-01-16)
 
 
