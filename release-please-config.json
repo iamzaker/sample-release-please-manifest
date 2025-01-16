@@ -19,7 +19,7 @@
             "component": "feature-flags",                     
             "release-type": "node",            
             "changelog-path": "CHANGELOG.md",
-            "path": "packages/feature-flags",
+            "path": "packages/feature-flags"
         },
         "starters/nestjs-startup-app": {
             "component": "nestjs-startup-app",
