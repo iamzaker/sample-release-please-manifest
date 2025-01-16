@@ -2,6 +2,7 @@
     "include-v-in-tag": true,
     "tag-separator": "@",
     "always-link-local": true,
+    "bootstrap-sha": "7b83717385ed93ecb8b4e0d17d6ff0cc32fcb48f",
     "packages":{
         "packages/hello-world-util": {  
             "component": "hello-world-util",                     
@@ -25,9 +26,7 @@
             "component": "string-utils",                     
             "release-type": "node",            
             "changelog-path": "packages/string-utils/CHANGELOG.md",
-            "path": "packages/string-utils",
-            "release-as": "1.0.0"
-            
+            "path": "packages/string-utils"
         },
         "packages/task-queue-manager": {  
             "component": "task-queue-manager",                     
@@ -35,7 +34,6 @@
             "changelog-path": "packages/task-queue-manager/CHANGELOG.md",
             "path": "packages/task-queue-manager",
             "release-as": "1.0.0"
-            
         },
         "starters/nestjs-startup-app": {
             "component": "nestjs-startup-app",
