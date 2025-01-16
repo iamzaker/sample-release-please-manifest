@@ -2,5 +2,6 @@
     "packages/hello-world-util": "5.0.0",
     "starters/nestjs-startup-app": "4.0.1",
     "packages/date-helpers": "4.0.0",
-    "packages/feature-flags": "1.0.0"
+    "packages/feature-flags": "1.0.0",
+    "packages/string-utils": "1.0.0"
 }
