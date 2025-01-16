@@ -13,6 +13,8 @@ export default {
           "hello-world-util",
           "date-helpers",
           "nestjs-startup-app",
+          "feature-flags",
+          "ci",
           "repo"
         ],
       ],
