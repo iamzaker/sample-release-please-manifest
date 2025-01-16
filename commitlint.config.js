@@ -14,6 +14,7 @@ export default {
           "date-helpers",
           "nestjs-startup-app",
           "feature-flags",
+          "task-queue-manager",
           "ci",
           "repo"
         ],
