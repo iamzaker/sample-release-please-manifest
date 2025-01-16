@@ -2,7 +2,9 @@
   "name": "feature-flags",
   "version": "1.0.0",
   "main": "index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node src/index.ts"
   },
@@ -14,5 +16,8 @@
     "@types/node": "^22.10.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
