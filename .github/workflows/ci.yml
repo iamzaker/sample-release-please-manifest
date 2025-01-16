@@ -31,7 +31,7 @@ jobs:
               - 'packages/hello-world-util/**'
             feature-flags:
               - 'packages/feature-flags/**'
-            string-utilss:
+            string-utils:
               - 'packages/string-utils/**'
             nestjs-startup-app:
               - 'starters/nestjs-startup-app/**'
