@@ -1,6 +1,8 @@
 name: Dry Run Release
 on:
   pull_request:
+    branches:
+        - feature/*
     types: [opened, synchronize, reopened]
   push:
     branches:
@@ -21,7 +23,8 @@ jobs:
         run: npm install -g release-please
 
       - name: Run release-please (dry-run mode)
-        if: startsWith(github.ref, 'refs/heads/feature/')
+        # if: startsWith(github.ref, 'refs/heads/feature/')
         run: |
+            echo "Repository url is: ${{ github.repository }}"
             release-please release-pr --token=${{ secrets.GITHUB_TOKEN }} --repo-url=https://github.com/${{ github.repository }} --dry-run
             release-please manifest-pr --token=${{ secrets.GITHUB_TOKEN }} --repo-url=https://github.com/${{ github.repository }} --dry-run
