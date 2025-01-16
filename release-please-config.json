@@ -2,7 +2,7 @@
     "include-v-in-tag": true,
     "tag-separator": "@",
     "always-link-local": true,
-    "bootstrap-sha": "40055f7d972285ea69c3e4792d9619d7b41884d3",
+    "bootstrap-sha": "afc583ab786442c3c1c931c9730f0c5de639be8c",
     "packages":{
         "packages/hello-world-util": {  
             "component": "hello-world-util",                     
