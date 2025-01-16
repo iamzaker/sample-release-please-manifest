@@ -19,7 +19,8 @@
             "component": "nestjs-startup-app",
             "release-type": "node",
             "changelog-path": "CHANGELOG.md",
-            "private": true
+            "private": true,
+            "path": "starters/nestjs-startup-app"
         }
     },
     "plugins":[
