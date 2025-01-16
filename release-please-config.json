@@ -2,43 +2,40 @@
     "include-v-in-tag": true,
     "tag-separator": "@",
     "always-link-local": true,
+    "bootstrap-sha": "c4263e38887042afd720698213c90a997d88ac27",
     "packages":{
         "packages/hello-world-util": {  
             "component": "hello-world-util",                     
             "release-type": "node",            
             "changelog-path": "packages/hello-world-util/CHANGELOG.md",
-            "path": "packages/hello-world-util",
-            "separate-pull-requests": true
+            "path": "packages/hello-world-util"
         },
         "packages/date-helpers": {  
             "component": "date-helpers",                     
             "release-type": "node",            
             "changelog-path": "packages/date-helpers/CHANGELOG.md",
-            "path": "packages/date-helpers",
-            "separate-pull-requests": true
+            "path": "packages/date-helpers"
         },
         "packages/feature-flags": {  
             "component": "feature-flags",                     
             "release-type": "node",            
             "changelog-path": "packages/feature-flags/CHANGELOG.md",
-            "path": "packages/feature-flags",
-            "separate-pull-requests": true
+            "path": "packages/feature-flags"
         },
         "packages/string-utils": {  
             "component": "string-utils",                     
             "release-type": "node",            
             "changelog-path": "packages/string-utils/CHANGELOG.md",
             "path": "packages/string-utils",
-            "release-as": "1.0.0",
-            "separate-pull-requests": true
+            "release-as": "1.0.0"
+            
         },
         "starters/nestjs-startup-app": {
             "component": "nestjs-startup-app",
             "release-type": "node",
             "changelog-path": "starters/nestjs-startup-app/CHANGELOG.md",
             "private": true,
-            "path": "starters/nestjs-startup-app",
-            "separate-pull-requests": true
+            "path": "starters/nestjs-startup-app"
         }
     },
     "plugins":[
