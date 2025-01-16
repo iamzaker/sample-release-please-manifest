@@ -6,32 +6,32 @@
         "packages/hello-world-util": {  
             "component": "hello-world-util",                     
             "release-type": "node",            
-            "changelog-path": "CHANGELOG.md",
+            "changelog-path": "packages/hello-world-util/CHANGELOG.md",
             "path": "packages/hello-world-util"
         },
         "packages/date-helpers": {  
             "component": "date-helpers",                     
             "release-type": "node",            
-            "changelog-path": "CHANGELOG.md",
+            "changelog-path": "packages/date-helpers/CHANGELOG.md",
             "path": "packages/date-helpers"
         },
         "packages/feature-flags": {  
             "component": "feature-flags",                     
             "release-type": "node",            
-            "changelog-path": "CHANGELOG.md",
+            "changelog-path": "packages/feature-flags/CHANGELOG.md",
             "path": "packages/feature-flags"
         },
         "packages/string-utils": {  
             "component": "string-utils",                     
             "release-type": "node",            
-            "changelog-path": "CHANGELOG.md",
+            "changelog-path": "packages/string-utils/CHANGELOG.md",
             "path": "packages/string-utils",
             "release-as": "1.0.0"
         },
         "starters/nestjs-startup-app": {
             "component": "nestjs-startup-app",
             "release-type": "node",
-            "changelog-path": "CHANGELOG.md",
+            "changelog-path": "starters/nestjs-startup-app/CHANGELOG.md",
             "private": true,
             "path": "starters/nestjs-startup-app"
         }

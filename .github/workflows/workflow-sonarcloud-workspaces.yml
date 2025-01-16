@@ -36,7 +36,7 @@ jobs:
            projectDirectory: ${{ inputs.projectDirectory }}
            nodeVersion: ${{inputs.nodeVersion}}
 
-      - name: Build packages for {{ inputs.projectDirectory }}
+      - name: Build packages for ${{ inputs.projectDirectory }}
         run: |
           npm run  build
         working-directory: ${{inputs.projectDirectory}}

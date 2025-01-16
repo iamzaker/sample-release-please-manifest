@@ -1,40 +1,40 @@
-name: Update Release-Please Label
+# name: Update Release-Please Label
 
-on:
-  pull_request:
-    types:
-      - closed
+# on:
+#   pull_request:
+#     types:
+#       - closed
 
-env:
-  GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+# env:
+#   GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
-jobs:
-  update-latest-label:
-    if: ${{ github.event.pull_request.merged }} # Only run if the PR is merged
-    runs-on: ubuntu-latest
-    steps:
-      # Step 1: Fetch PRs with `autorelease: tagged`
-      - name: Fetch PRs with autorelease:tagged
-        id: fetch-prs
-        uses: octokit/request-action@v2.x
-        with:
-          route: GET /repos/${{ github.repository_owner }}/${{ github.event.repository.name }}/issues
-          mediaType: '{"labels": "autorelease: tagged", "state": "open"}'
-        # env:
-        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+# jobs:
+#   update-latest-label:
+#     if: ${{ github.event.pull_request.merged }} # Only run if the PR is merged
+#     runs-on: ubuntu-latest
+#     steps:
+#       # Step 1: Fetch PRs with `autorelease: tagged`
+#       - name: Fetch PRs with autorelease:tagged
+#         id: fetch-prs
+#         uses: octokit/request-action@v2.x
+#         with:
+#           route: GET /repos/${{ github.repository_owner }}/${{ github.event.repository.name }}/issues
+#           mediaType: '{"labels": "autorelease: tagged", "state": "open"}'
+#         # env:
+#         #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Find Latest PR
-        id: find-latest-pr
-        run: |
-          echo "Found PRs: ${{ steps.fetch-prs.outputs.data }}"
-          latest_pr=$(echo '${{ steps.fetch-prs.outputs.data }}' | jq -r 'max_by(.updated_at) | .number')
-          echo "LATEST_PR=$latest_pr" >> $GITHUB_ENV
+#       - name: Find Latest PR
+#         id: find-latest-pr
+#         run: |
+#           echo "Found PRs: ${{ steps.fetch-prs.outputs.data }}"
+#           latest_pr=$(echo '${{ steps.fetch-prs.outputs.data }}' | jq -r 'max_by(.updated_at) | .number')
+#           echo "LATEST_PR=$latest_pr" >> $GITHUB_ENV
       
-      - name: Update Label on Latest PR
-        if: ${{ env.LATEST_PR != '' }}
-        uses: octokit/request-action@v2.x
-        with:
-          route: PATCH /repos/${{ github.repository_owner }}/${{ github.event.repository.name }}/issues/${{ env.LATEST_PR }}
-          mediaType: '{"labels": ["autorelease: published"]}'
-        # env:
-        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#       - name: Update Label on Latest PR
+#         if: ${{ env.LATEST_PR != '' }}
+#         uses: octokit/request-action@v2.x
+#         with:
+#           route: PATCH /repos/${{ github.repository_owner }}/${{ github.event.repository.name }}/issues/${{ env.LATEST_PR }}
+#           mediaType: '{"labels": ["autorelease: published"]}'
+#         # env:
+#         #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
