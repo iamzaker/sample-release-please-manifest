@@ -21,6 +21,13 @@
             "changelog-path": "CHANGELOG.md",
             "path": "packages/feature-flags"
         },
+        "packages/string-utils": {  
+            "component": "string-utils",                     
+            "release-type": "node",            
+            "changelog-path": "CHANGELOG.md",
+            "path": "packages/string-utils",
+            "release-as": "1.0.0"
+        },
         "starters/nestjs-startup-app": {
             "component": "nestjs-startup-app",
             "release-type": "node",
