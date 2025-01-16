@@ -53,7 +53,6 @@ jobs:
       - name: Build packages for ${{ matrix.projectDirectory }}
         run: |
            npm run build
-           cp package.json dist/
         working-directory: ${{ matrix.projectDirectory }}
 
       - name: Print directory structure
@@ -65,8 +64,7 @@ jobs:
         working-directory: ${{ matrix.projectDirectory }}
       
       - name: Publish
-        working-directory: ${{ matrix.projectDirectory }}/dist
-        # run: npx publish from-package --contents dist --no-push --no-private --yes
-        run: npm publish --access public
+        working-directory: ${{ matrix.projectDirectory }}
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
