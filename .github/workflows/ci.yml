@@ -29,6 +29,8 @@ jobs:
               - 'packages/date-helpers/**'
             hello-world-util:
               - 'packages/hello-world-util/**'
+            feature-flags:
+              - 'packages/feature-flags/**'
             nestjs-startup-app:
               - 'starters/nestjs-startup-app/**'
   sonar: 
@@ -42,6 +44,9 @@ jobs:
             nodeVersion: 'lts/*'
           - filter: hello-world-util
             projectDirectory: packages/hello-world-util
+            nodeVersion: 'lts/*'
+          - filter: feature-flags
+            projectDirectory: packages/feature-flags
             nodeVersion: 'lts/*'
           - filter: nestjs-startup-app
             projectDirectory: starters/nestjs-startup-app
