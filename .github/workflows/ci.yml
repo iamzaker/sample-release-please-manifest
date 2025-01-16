@@ -33,6 +33,8 @@ jobs:
               - 'packages/feature-flags/**'
             string-utils:
               - 'packages/string-utils/**'
+            task-queue-manager:
+              - 'packages/task-queue-manager/**'
             nestjs-startup-app:
               - 'starters/nestjs-startup-app/**'
   sonar: 
@@ -52,6 +54,9 @@ jobs:
             nodeVersion: 'lts/*'
           - filter: string-utils
             projectDirectory: packages/string-utils
+            nodeVersion: 'lts/*'
+          - filter: task-queue-manager
+            projectDirectory: packages/task-queue-manager
             nodeVersion: 'lts/*'
           - filter: nestjs-startup-app
             projectDirectory: starters/nestjs-startup-app

@@ -45,8 +45,23 @@ npm install --save-dev jest
 # Building up using lerna
 By default there won't be any build script in package.json so manually add it else that project would
 not be considered for build.
-git commit --allow-empty -m "chore(hello-world-util): release 0.0.26" -m "Release-As: 0.0.26"
+git commit --allow-empty -m "chore(hello-world-util): release 2.5.0" -m "Release-As: 2.5.0"
 
+release-please release-pr --package-name=@smart-utilities/hello-world-util --path=packages/hello-world-util --release-as=2.5.0
+
+release-please release-pr --package-name=@smart-utilities/hello-world-util --path=packages/hello-world-util --release-as=2.5.0 --repo-url=https://github.com/your-username/your-repo
+
+release-please release-pr --package-name=@smart-utilities/hello-world-util --path=packages/hello-world-util --release-as=2.5.0 --repo-url=git@github-personal:iamzaker/sample-release-please-manifest.git
+
+release-please release-pr --package-name=@smart-utilities/hello-world-util --path=packages/hello-world-util --release-as=2.5.0 --repo-url=https://github.com/owner/repo_name
+
+GITHUB_TOKEN=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 release-please release-pr --package-name=@smart-utilities/hello-world-util --path=packages/hello-world-util --release-as=2.5.0 --repo-url=https://github.com/iamzaker/sample-release-please-manifest
+
+syntax2:
+release-please bootstrap --token=$GITHUB_TOKEN --repo-url=<owner>/<repo> --release-type=<release-type> [extra options]
+release-please release-pr  --token=$GITHUB_TOKEN --repo-url=https://github.com/iamzaker/sample-release-please-manifest
+
+release-please release-pr --token=$GITHUB_TOKEN --package-name=@smart-utilities/hello-world-util --path=packages/hello-world-util --release-as=2.5.0 --repo-url=https://github.com/iamzaker/sample-release-please-manifest
 
 # CAF folder structure
 ```plaintext
