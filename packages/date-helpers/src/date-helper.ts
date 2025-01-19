@@ -71,3 +71,13 @@ export function startOfMonth(date: Date) {
 export function getDayName(date: Date) {
   return date.toLocaleDateString('en-US', { weekday: 'long' });
 }
+
+// Gets the name of the month (e.g., 'January')
+export function getMonthName(date: Date) {
+  return date.toLocaleDateString('en-US', { month: 'long' });
+}
+
+// Checks if a year is a leap year
+export function isLeapYear(year: number) {
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
