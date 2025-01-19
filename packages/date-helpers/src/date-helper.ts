@@ -81,3 +81,7 @@ export function getMonthName(date: Date) {
 export function isLeapYear(year: number) {
   return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }
+
+const printIsLeapYear = (year: number) => { 
+  console.log(`${year} is a leap year: ${isLeapYear(year)}`);
+}
