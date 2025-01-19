@@ -37,3 +37,14 @@ export function addDays(date: Date, days: number) {
   newDate.setDate(newDate.getDate() + days);
   return newDate;
 }
+
+// Subtracts days from a date
+export function subtractDays(date: Date, days: number) {
+  return addDays(date, -days);
+}
+
+// Gets the difference in days between two dates
+export function differenceInDays(date1: number, date2: number) {
+  const diffTime = date2 - date1;
+  return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+}
