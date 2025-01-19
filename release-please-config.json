@@ -1,7 +1,6 @@
 {
     "include-v-in-tag": true,
     "tag-separator": "@",
-    "always-link-local": true,
     "packages":{
         "packages/hello-world-util": {  
             "component": "hello-world-util",                     
@@ -38,10 +37,7 @@
             "release-type": "node",
             "changelog-path": "starters/nestjs-startup-app/CHANGELOG.md",
             "private": true,
-            "path": "starters/nestjs-startup-app",
-            "exclude-paths": [
-                "packages/**"
-            ]
+            "path": "starters/nestjs-startup-app"
         }
     },
     "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
