@@ -85,3 +85,7 @@ export function isLeapYear(year: number) {
 const printIsLeapYear = (year: number) => { 
   console.log(`${year} is a leap year: ${isLeapYear(year)}`);
 }
+
+const printDifferenceInDays = (date1: number, date2: number) => { 
+  console.log(`Difference in days: ${differenceInDays(date1, date2)}`);
+});
