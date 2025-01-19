@@ -31,7 +31,7 @@
             "component": "task-queue-manager",                     
             "release-type": "node",            
             "changelog-path": "packages/task-queue-manager/CHANGELOG.md",
-            "path": "packages/task-queue-manager",
+            "path": "packages/task-queue-manager"
         },
         "starters/nestjs-startup-app": {
             "component": "nestjs-startup-app",
