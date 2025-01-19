@@ -17,3 +17,6 @@ releases all 3 packages
 Navigated to drive and running the below command doesn't seems to work.
 
 release-please release-pr --token=$GITHUB_TOKEN --package-name=@smart-utilities/hello-world-util --path=packages/hello-world-util --release-as=2.5.0 --repo-url=https://github.com/iamzaker/sample-release-please-manifest
+
+This package generates a uuid.
+A hello world util containing `formatDate` function
