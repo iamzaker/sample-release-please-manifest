@@ -48,3 +48,40 @@ export function differenceInDays(date1: number, date2: number) {
   const diffTime = date2 - date1;
   return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 }
+
+// Checks if a date is today
+export function isToday(date: Date) {
+  const today = new Date();
+  return compareDates(date, today) === 0;
+}
+
+// Gets the start of the week for a given date (Sunday)
+export function startOfWeek(date: Date) {
+  const newDate = new Date(date);
+  const day = newDate.getDay();
+  return subtractDays(newDate, day);
+}
+
+// Gets the start of the month for a given date
+export function startOfMonth(date: Date) {
+  return new Date(date.getFullYear(), date.getMonth(), 1);
+}
+
+// Gets the name of the day (e.g., 'Monday')
+export function getDayName(date: Date) {
+  return date.toLocaleDateString('en-US', { weekday: 'long' });
+}
+
+// Gets the name of the month (e.g., 'January')
+export function getMonthName(date: Date) {
+  return date.toLocaleDateString('en-US', { month: 'long' });
+}
+
+// Checks if a year is a leap year
+export function isLeapYear(year: number) {
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
+
+const printIsLeapYear = (year: number) => { 
+  console.log(`${year} is a leap year: ${isLeapYear(year)}`);
+}
