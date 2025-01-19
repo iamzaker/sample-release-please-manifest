@@ -23,3 +23,17 @@ export const formatDate = (date: Date, format: string): string => {
   console.log(formattedDate);
   return formattedDate;
 };
+
+// Compares two dates (ignores time)
+export function compareDates(date1: Date, date2: Date) {
+  const d1 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate()).getDate();
+  const d2 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate()).getDate();
+  return d1 - d2;
+}
+
+// Adds days to a date
+export function addDays(date: Date, days: number) {
+  const newDate = new Date(date);
+  newDate.setDate(newDate.getDate() + days);
+  return newDate;
+}
