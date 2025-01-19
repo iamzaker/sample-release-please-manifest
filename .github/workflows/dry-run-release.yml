@@ -26,5 +26,5 @@ jobs:
         # if: startsWith(github.ref, 'refs/heads/feature/')
         run: |
             echo "Repository url is: ${{ github.repository }}"
-            release-please release-pr --token=${{ secrets.GITHUB_TOKEN }} --repo-url=https://github.com/${{ github.repository }} --dry-run
-            release-please manifest-pr --token=${{ secrets.GITHUB_TOKEN }} --repo-url=https://github.com/${{ github.repository }} --dry-run
+            release-please release-pr --token=${{ secrets.PAT }} --repo-url=https://github.com/${{ github.repository }} --dry-run
+            release-please manifest-pr --token=${{ secrets.PAT }} --repo-url=https://github.com/${{ github.repository }} --dry-run
