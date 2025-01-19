@@ -20,3 +20,4 @@ release-please release-pr --token=$GITHUB_TOKEN --package-name=@smart-utilities/
 
 This package generates a uuid.
 A hello world util containing `formatDate` function
+A commit/change here to trigger a release.
