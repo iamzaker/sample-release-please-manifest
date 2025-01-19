@@ -48,3 +48,16 @@ export function differenceInDays(date1: number, date2: number) {
   const diffTime = date2 - date1;
   return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 }
+
+// Checks if a date is today
+export function isToday(date: Date) {
+  const today = new Date();
+  return compareDates(date, today) === 0;
+}
+
+// Gets the start of the week for a given date (Sunday)
+export function startOfWeek(date: Date) {
+  const newDate = new Date(date);
+  const day = newDate.getDay();
+  return subtractDays(newDate, day);
+}
