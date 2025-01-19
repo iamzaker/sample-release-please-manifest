@@ -38,7 +38,10 @@
             "release-type": "node",
             "changelog-path": "starters/nestjs-startup-app/CHANGELOG.md",
             "private": true,
-            "path": "starters/nestjs-startup-app"
+            "path": "starters/nestjs-startup-app",
+            "exclude-paths": [
+                "packages/**"
+            ]
         }
     },
     "plugins":[
