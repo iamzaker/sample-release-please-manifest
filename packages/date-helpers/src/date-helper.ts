@@ -61,3 +61,13 @@ export function startOfWeek(date: Date) {
   const day = newDate.getDay();
   return subtractDays(newDate, day);
 }
+
+// Gets the start of the month for a given date
+export function startOfMonth(date: Date) {
+  return new Date(date.getFullYear(), date.getMonth(), 1);
+}
+
+// Gets the name of the day (e.g., 'Monday')
+export function getDayName(date: Date) {
+  return date.toLocaleDateString('en-US', { weekday: 'long' });
+}
