@@ -1,12 +1,14 @@
 name: Dry Run Release
 on:
-  pull_request:
-    branches:
-        - feature/*
-    types: [opened, synchronize, reopened]
-  push:
-    branches:
-        - feature/*
+  # pull_request:
+  #   branches:
+  #       - feature/*
+  #   types: [opened, synchronize, reopened]
+  # push:
+  #   branches:
+  #       - feature/*
+  workflow_dispatch:
+    
 jobs:
   dry-run-release:
     runs-on: ubuntu-latest
@@ -26,5 +28,7 @@ jobs:
         # if: startsWith(github.ref, 'refs/heads/feature/')
         run: |
             echo "Repository url is: ${{ github.repository }}"
-            release-please release-pr --token=${{ secrets.PAT }} --repo-url=https://github.com/${{ github.repository }} --dry-run
+            # release-please release-pr --token=${{ secrets.PAT }} --repo-url=https://github.com/${{ github.repository }} --dry-run
+            # release-please release-pr --token="${ secrets.PAT }" --repo-url=https://github.com/${{ github.repository }} --target-branch=${{ github.event.inputs.branch }} --dry-run
+            release-please release-pr --token=${{ secrets.PAT }} --repo-url=https://github.com/${{ github.repository }} --target-branch="${{ github.ref_name }}" --dry-run
             release-please manifest-pr --token=${{ secrets.PAT }} --repo-url=https://github.com/${{ github.repository }} --dry-run
