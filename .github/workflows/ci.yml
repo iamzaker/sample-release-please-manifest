@@ -15,8 +15,9 @@ jobs:
     name: Identify file changes
     runs-on: ubuntu-latest
     permissions:
-      pull-requests: read
+      pull-requests: write
       contents: read
+      checks: write
     outputs:
       paths: ${{ steps.filter.outputs.changes }}
     steps:
