@@ -55,14 +55,14 @@ jobs:
         working-directory: ${{inputs.projectDirectory}}
         env:
           JEST_JUNIT_OUTPUT_DIR: ${{ inputs.projectDirectory }}/test-results
-          JEST_JUNIT_OUTPUT_NAME: results.xml
+          JEST_JUNIT_OUTPUT_NAME: junit.xml
 
-      # - name: Publish test results
-      #   uses: EnricoMi/publish-unit-test-result-action@v2
-      #   if: always()
-      #   with: 
-      #     files: |
-      #       ${{ inputs.projectDirectory }}/test-results/junit.xml
+      - name: Publish test results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with: 
+          files: |
+            ${{ inputs.projectDirectory }}/junit.xml
 
         
 
