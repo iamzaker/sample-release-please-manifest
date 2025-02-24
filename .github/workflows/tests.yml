@@ -69,4 +69,3 @@ jobs:
        uses: ./.github/actions/setup-test-project
        with:
           projectDirectory: ${{ matrix.projectDirectory }}
-          nodeVersion: ${{ matrix.nodeVersion }}
