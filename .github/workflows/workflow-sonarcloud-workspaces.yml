@@ -54,7 +54,7 @@ jobs:
          npm run --if-present test:cov -- --reporters=default --reporters=jest-junit || echo "test script not found, skipping."
         working-directory: ${{inputs.projectDirectory}}
         env:
-          JEST_JUNIT_OUTPUT_DIR: ${{ inputs.projectDirectory }}/test-results
+          JEST_JUNIT_OUTPUT_DIR: ${{ inputs.projectDirectory }}/reports/junit
           JEST_JUNIT_OUTPUT_NAME: junit.xml
 
       - name: Publish test results
@@ -62,7 +62,7 @@ jobs:
         if: always()
         with: 
           files: |
-            ${{ inputs.projectDirectory }}/junit.xml
+            ${{ inputs.projectDirectory }}/reports/junit/junit.xml
 
         
 
