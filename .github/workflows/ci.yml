@@ -40,9 +40,6 @@ jobs:
   sonar: 
     name: SonarQube Scan
     needs: changes
-    permissions:
-      pull-requests: write
-      checks: write
     strategy:
       matrix:
         include:
