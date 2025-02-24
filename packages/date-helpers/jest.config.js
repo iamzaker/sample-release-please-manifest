@@ -9,6 +9,6 @@ module.exports = {
     moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node'],
     reporters: [
       "default",
-      ["jest-junit", { outputDirectory: "./reports/junit" }]
+      ["jest-junit", { outputDirectory: "./reports", outputName: "test-results.xml" }]
     ]
   };
