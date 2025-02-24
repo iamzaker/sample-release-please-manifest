@@ -25,10 +25,10 @@ jobs:
     name: Lint for ${{ inputs.projectDirectory }}
     runs-on: ubuntu-latest
     if: ${{ !inputs.filters || contains(fromJSON(inputs.filters), inputs.filter) }}
-    permissions:
-      pull-requests: write
-      contents: read
-      checks: write
+    # permissions:
+    #   pull-requests: write
+    #   contents: read
+    #   checks: write
     steps:
       - uses: actions/checkout@v4
         with:
