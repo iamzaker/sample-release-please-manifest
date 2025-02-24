@@ -13,5 +13,6 @@ runs:
       with:
         files: ${{ inputs.projectDirectory }}/reports/test-results.xml
         check_name: "Test Results - ${{ inputs.project }}"
+        comment_mode: true
       # check_run: true
       # working-directory: ${{ inputs.projectDirectory }}
