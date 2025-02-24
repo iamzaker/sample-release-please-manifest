@@ -17,5 +17,5 @@ runs:
       with:
         files: |
           ${{ inputs.projectDirectory }}/reports/test-results.xml
-      check_run: true
-      working-directory: ${{ inputs.projectDirectory }}
+      # check_run: true
+      # working-directory: ${{ inputs.projectDirectory }}
