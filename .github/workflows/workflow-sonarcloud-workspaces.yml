@@ -62,7 +62,7 @@ jobs:
         if: always()
         with: 
           files: |
-            ${{ input.projectDirectory }}/test-results/junit.xml
+            ${{ inputs.projectDirectory }}/test-results/junit.xml
 
         
 
