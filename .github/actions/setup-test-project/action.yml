@@ -12,6 +12,6 @@ runs:
       if: always()
       with:
         files: ${{ inputs.projectDirectory }}/reports/test-results.xml
-        check_name: "Test Results - ${{ input.project }}"
+        check_name: "Test Results - ${{ inputs.project }}"
       # check_run: true
       # working-directory: ${{ inputs.projectDirectory }}
