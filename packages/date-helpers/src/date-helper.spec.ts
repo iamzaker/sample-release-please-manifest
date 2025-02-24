@@ -4,6 +4,7 @@ describe('Date Helper Functions', () => {
     it('helloWorld should return the correct message', () => {
         const message = helloWorld();
         expect(message).toBe('Hello World from package version 0.0.21!');
+        expect(message).toBe('Hello World from package version 0.0.21!');
     });
 
     it('formatDate should format date correctly', () => {
