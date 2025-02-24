@@ -4,10 +4,6 @@ inputs:
   projectDirectory:
     description: 'The directory of the project to set up'
     required: true
-  nodeVersion:
-    description: 'The Node.js version to use'
-    required: true
-    default: '18.x'
 runs:
   using: 'composite'
   steps:
@@ -15,7 +11,7 @@ runs:
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
       with:
-        files: |
-          ${{ inputs.projectDirectory }}/reports/test-results.xml
+        files: ${{ inputs.projectDirectory }}/reports/test-results.xml
+        check_name: "Test Results - ${{ input.project }}"
       # check_run: true
       # working-directory: ${{ inputs.projectDirectory }}
