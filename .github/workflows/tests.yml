@@ -7,11 +7,11 @@ on:
     types: [opened, synchronize, reopened]
 jobs:
   changes:
+    name: Identify File Changes
+    runs-on: ubuntu-latest
     permissions:
       pull-requests: read
       contents: read
-    name: Identify File Changes
-    runs-on: ubuntu-latest
     outputs:
       paths: ${{ steps.filter.outputs.changes }}
     steps:
@@ -64,6 +64,7 @@ jobs:
             nodeVersion: 'lts/*'
    
     steps: 
+     - uses: actions/checkout@v4
      - name: Run test
        uses: ./.github/actions/setup-test-project
        with:
