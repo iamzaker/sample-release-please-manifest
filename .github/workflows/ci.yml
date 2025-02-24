@@ -15,9 +15,8 @@ jobs:
     name: Identify file changes
     runs-on: ubuntu-latest
     permissions:
-      pull-requests: write
+      pull-requests: read
       contents: read
-      checks: write
     outputs:
       paths: ${{ steps.filter.outputs.changes }}
     steps:
@@ -41,6 +40,9 @@ jobs:
   sonar: 
     name: SonarQube Scan
     needs: changes
+    permissions:
+      pull-requests: write
+      checks: write
     strategy:
       matrix:
         include:
