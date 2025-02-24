@@ -51,19 +51,18 @@ jobs:
 
       - name: Unit test
         run: |
-        #  npm run --if-present --workspace=${{ inputs.projectDirectory }} npm test:cov || echo "test script not found, skipping."
          npm run --if-present npm test:cov -- --reporters=default --reporters=jest-junit || echo "test script not found, skipping."
         working-directory: ${{inputs.projectDirectory}}
         env:
           JEST_JUNIT_OUTPUT_DIR: ${{ inputs.projectDirectory }}/test-results
           JEST_JUNIT_OUTPUT_NAME: results.xml
 
-      - name: Publis test results
+      - name: Publish test results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with: 
           files: |
-            ${{ input.projectDirectory }}/junit.xml
+            ${{ input.projectDirectory }}/test-results/junit.xml
 
         
 

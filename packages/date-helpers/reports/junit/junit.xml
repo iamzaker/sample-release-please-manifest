@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="9" failures="0" errors="0" time="1.52">
+  <testsuite name="Date Helper Functions" errors="0" failures="0" skipped="0" timestamp="2025-02-24T04:16:15" time="1.439" tests="9">
+    <testcase classname="Date Helper Functions helloWorld should return the correct message" name="Date Helper Functions helloWorld should return the correct message" time="0.017">
+    </testcase>
+    <testcase classname="Date Helper Functions formatDate should format date correctly" name="Date Helper Functions formatDate should format date correctly" time="0.003">
+    </testcase>
+    <testcase classname="Date Helper Functions compareDates should compare two dates correctly" name="Date Helper Functions compareDates should compare two dates correctly" time="0.001">
+    </testcase>
+    <testcase classname="Date Helper Functions addDays should add days to a date correctly" name="Date Helper Functions addDays should add days to a date correctly" time="0">
+    </testcase>
+    <testcase classname="Date Helper Functions subtractDays should subtract days from a date correctly" name="Date Helper Functions subtractDays should subtract days from a date correctly" time="0">
+    </testcase>
+    <testcase classname="Date Helper Functions differenceInDays should return the correct difference in days" name="Date Helper Functions differenceInDays should return the correct difference in days" time="0.001">
+    </testcase>
+    <testcase classname="Date Helper Functions isToday should return true if the date is today" name="Date Helper Functions isToday should return true if the date is today" time="0">
+    </testcase>
+    <testcase classname="Date Helper Functions startOfWeek should return the start of the week" name="Date Helper Functions startOfWeek should return the start of the week" time="0">
+    </testcase>
+    <testcase classname="Date Helper Functions startOfMonth should return the start of the month" name="Date Helper Functions startOfMonth should return the start of the month" time="0.002">
+    </testcase>
+  </testsuite>
+</testsuites>
