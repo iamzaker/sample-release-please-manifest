@@ -62,7 +62,9 @@ jobs:
             projectDirectory: starters/nestjs-startup-app
             nodeVersion: 'lts/*'
    
-    uses: ./.github/actions/setup-test-project
-    with:
-      projectDirectory: ${{ matrix.projectDirectory }}
-      nodeVersion: ${{ matrix.nodeVersion }}
+    steps: 
+     - name: Run test
+       uses: ./.github/actions/setup-test-project
+       with:
+          projectDirectory: ${{ matrix.projectDirectory }}
+          nodeVersion: ${{ matrix.nodeVersion }}
