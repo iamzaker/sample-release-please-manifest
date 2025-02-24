@@ -66,5 +66,3 @@ jobs:
     with:
       projectDirectory: ${{ matrix.projectDirectory }}
       nodeVersion: ${{ matrix.nodeVersion }}
-      registry-url: '//pkgs.dev.azure.com/picklesauctions/_packaging/Npm_packages/npm/registry/'
-      npmToken: ${{ secrets.NPM_TOKEN }}
