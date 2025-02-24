@@ -51,7 +51,7 @@ jobs:
 
       - name: Unit test
         run: |
-         npm run --if-present npm test:cov -- --reporters=default --reporters=jest-junit || echo "test script not found, skipping."
+         npm run --if-present test:cov -- --reporters=default --reporters=jest-junit || echo "test script not found, skipping."
         working-directory: ${{inputs.projectDirectory}}
         env:
           JEST_JUNIT_OUTPUT_DIR: ${{ inputs.projectDirectory }}/test-results
