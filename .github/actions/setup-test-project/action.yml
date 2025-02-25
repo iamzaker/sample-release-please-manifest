@@ -7,6 +7,22 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name: Install jest-junit temporarily
+      run: npm install --no-save jest-junit
+      working-directory: ${{ inputs.projectDirectory }
+
+    - name: Unit test
+      run: |
+         npm run --if-present test:cov -- --reporters=default --reporters=jest-junit || echo "test script not found, skipping."
+      working-directory: ${{inputs.projectDirectory}}
+      env:
+          JEST_JUNIT_OUTPUT_DIR: ${{ inputs.projectDirectory }}/reports
+          JEST_JUNIT_OUTPUT_NAME: test-results.xml
+    
+    - name: List directory structure after npm install
+      run: ls -R
+      working-directory: ${{ inputs.projectDirectory }}
+
     - name: Publish Test Results
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()

@@ -1,5 +1,9 @@
 name: Code Test
 on:
+  # workflow_run:
+  #   workflows: ["CI"]
+  #   types:
+  #     - completed
   push:
     branches:
         - main
