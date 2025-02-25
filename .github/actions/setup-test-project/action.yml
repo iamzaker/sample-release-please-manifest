@@ -9,7 +9,7 @@ runs:
   steps:
     - name: Install jest-junit temporarily
       run: npm install --no-save jest-junit
-      working-directory: ${{ inputs.projectDirectory }
+      working-directory: ${{ inputs.projectDirectory }}
       shell: bash
 
     - name: Unit test
