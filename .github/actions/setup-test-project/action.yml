@@ -19,10 +19,12 @@ runs:
       env:
           JEST_JUNIT_OUTPUT_DIR: ${{ inputs.projectDirectory }}/reports
           JEST_JUNIT_OUTPUT_NAME: test-results.xml
+      shell: bash
     
     - name: List directory structure after npm install
       run: ls -R
       working-directory: ${{ inputs.projectDirectory }}
+      shell: bash
 
     - name: Publish Test Results
       uses: EnricoMi/publish-unit-test-result-action@v2
