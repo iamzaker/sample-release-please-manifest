@@ -38,3 +38,6 @@ coverage/
 
 # Ignore auto-generated TypeDoc docs
 */*/docs/API/node_modules/
+*.xml
+# packages/date-helpers/reports/*.xml
+# packages/*/*/reports/*.xml
