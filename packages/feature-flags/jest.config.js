@@ -1,5 +1,5 @@
 module.exports = {
-    displayName: "nestjs-typeorm-transport",
+    displayName: "feature flags",
     preset: '../../jest.config.js',
     testEnvironment: 'node',
     roots: ['<rootDir>/src'],

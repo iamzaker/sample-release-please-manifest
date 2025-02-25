@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
-export default {
+// export default
+  module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   transform: {
