@@ -54,7 +54,7 @@ jobs:
          npm run --if-present test:cov --reporters=default --reporters=jest-junit || echo "test script not found, skipping."
         working-directory: ${{inputs.projectDirectory}}
         env:
-          JEST_JUNIT_OUTPUT_DIR: .reports
+          JEST_JUNIT_OUTPUT_DIR: ./reports
           JEST_JUNIT_OUTPUT_NAME: test-results.xml
 
       - name: Print directory structure (without node_modules)
