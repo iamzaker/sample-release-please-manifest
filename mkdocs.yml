@@ -1,0 +1,109 @@
+site_name: CAF Incubator
+docs_dir: docs
+site_dir: !ENV [RUNNER_TEMP, '/tmp/mkdocs']
+repo_url: https://github.com/iamzaker/sample-release-please-manifest/
+repo_name: iamzaker/sample-release-please-manifest/
+copyright: '&copy; 2024 iamzaker'
+theme:
+  name: material
+  favicon: assets/favicon.ico
+  logo: assets/favicon.png
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    # Enhanced tooltips
+    - content.tooltips
+    # Collapse folders with README.md into single header
+    - navigation.indexes
+    # Subfolders on left, good for nested documentation
+    - navigation.sections
+    # Footer
+    - navigation.footer
+    # Back to top button
+    - navigation.top
+  palette:
+    - media: '(prefers-color-scheme)'
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: '(prefers-color-scheme: light)'
+      # See assets/extra.css
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+extra_css:
+  - assets/extra.css
+plugins:
+  # Allows opt-in overriding of default navigation sorting per-directory
+  # Also allows overrriding directory name for nav with top-level `title:`
+  - awesome-pages
+  # Supports transformation of GitHub style callouts into MkDocs style
+  - callouts
+  # Show "last updated" information from Git
+  # - git-revision-date-localized
+  # Show who last updated
+  # - git-authors
+  # Need to re-enable default search when adding extra plugins
+  - search:
+      # Separator taken from Material for MkDocs docs
+      # Gives better searches for nested object paths like e.g. `useUTC` will match for `options.useUTC`
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  # Supports not needing a dedicated `docs/` dir
+  - monorepo
+  # Swagger support
+  - swagger-ui-tag
+  # Documentation tags (like labels in Confluence)
+  - tags
+# Initially from https://squidfunk.github.io/mkdocs-material/setup/extensions/?h=recommended+config#recommended-configuration
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.snippets:
+      auto_append:
+        - docs/.glossary.md
+nav:
+  # Each entry in top-level "docs/" folder must be a hard-coded nav,
+  # unfortunately (`./` doesn't seem to work)
+  - Home: README.md
+  - Packages: '*include ./packages/*/mkdocs.yml'

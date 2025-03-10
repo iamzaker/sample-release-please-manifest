@@ -1,0 +1,86 @@
+name: Github Pages
+on:
+ push:
+   branches:
+     - main
+permissions:
+  contents: write
+jobs:
+  typedoc:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - projectDirectory: packages/date-helpers
+            artifactName: pkg-date-helpers
+            nodeVersion: '18.x'
+          - projectDirectory: packages/feature-flags
+            artifactName: pkg-feature-flags
+            nodeVersion: '18.x'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup ${{ matrix.projectDirectory }}
+        uses: ./.github/actions/setup-node-project
+        with:
+          projectDirectory: ${{ matrix.projectDirectory }}
+          nodeVersion: ${{ matrix.nodeVersion }}
+          npmToken: ${{ secrets.NPM_TOKEN }}
+          registry-url: '//pkgs.dev.azure.com/picklesauctions/_packaging/Npm_packages/npm/registry/'
+      # @TODO: This would ideally be replaced with TypeScript project references
+      # and may change if we ever adopt NX monorepo tooling
+      - name: Build Project
+        run: npm run build
+        working-directory: ${{ matrix.projectDirectory }}
+        
+      - name: Generate Type Api Docs (if present)
+        run: npm run --if-present docs:typedoc
+        working-directory: ${{ matrix.projectDirectory }}
+
+      - name: Generate OpenAPI Docs
+        run: npm run --if-present generate:openapi || [ $? -ne 2 ]
+        working-directory: ${{ matrix.projectDirectory }}
+
+        # Persist artifact so we can re-download generate TypeDoc APIs later In a
+        # perfectionist sense, this would be a cache action. But artifacts allow
+        # us to download in a single step later using a prefix pattern. Whereas
+        # cache would require us to download each cache key individually in
+        # multiple steps. So this is more expressive, and isn't considered totally
+        # wrong by GitHub, since they really are "generated artifacts", not
+        # dependency caches
+      - name: Upload TypeDoc Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-${{ matrix.artifactName }}
+          # Include one "dummy" docs/ entry that's always present
+          # to workaround https://github.com/actions/upload-artifact/issues/174#issuecomment-934330651
+          path: |
+            ${{ matrix.projectDirectory }}/docs/
+            docs/
+          retention-days: 1
+          if-no-files-found: ignore
+  deploy:
+    runs-on: ubuntu-latest
+    needs: typedoc
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download TypeDoc Artifacts
+        uses: actions/download-artifact@v4
+        with:
+            pattern: docs-*
+            path: .
+            merge-multiple: true
+      - uses: actions/setup-python@v5
+        with:
+            python-version: '3.x'
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - uses: actions/cache@v4
+        with:
+              key: mkdocs-material-${{ env.cache_id }}
+              path: .cache
+              restore-keys: |
+                mkdocs-material-
+      - run: pip install -r docs/requirements.txt
+      - run: mkdocs gh-deploy --force
+
