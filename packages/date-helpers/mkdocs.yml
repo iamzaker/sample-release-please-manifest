@@ -1,1 +1,5 @@
 site_name: Date Helpers
+nav:
+  - Overview: index.md
+  - Getting Started: getting-started.md
+  - API Reference: api.md
