@@ -1,0 +1,23 @@
+/**
+ * Pickles branding for the theme
+ */
+ :root {
+    --md-primary-fg-color: #004C93;
+    --md-primary-fg-color--light:#004C93;
+    --md-primary-fg-color--dark: #004C93;
+  }
+  
+  /**
+   * Increase maximum width for larger screens (if screen is large enough)
+   */
+  .md-grid {
+    max-width: 1440px; 
+  }
+  
+  /**
+   * Don't allow wrapping of code blocks in table columns, which makes the TypeDoc
+   * table output more readable
+   */
+  th code, td code {
+    white-space: nowrap;
+  }
