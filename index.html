@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#core-application-framework-caf-incubator">
+<a class="md-skip" href="#sample-release-please-manifest">
           Skip to content
         </a>
 </div>
@@ -135,46 +135,11 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    Home
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
 <a class="md-nav__link md-nav__link--active" href=".">
 <span class="md-ellipsis">
     Home
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#description">
-<span class="md-ellipsis">
-      Description
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#table-of-contents">
-<span class="md-ellipsis">
-      Table of Contents
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#getting-started">
-<span class="md-ellipsis">
-      Getting Started
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
@@ -341,107 +306,55 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#description">
-<span class="md-ellipsis">
-      Description
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#table-of-contents">
-<span class="md-ellipsis">
-      Table of Contents
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#getting-started">
-<span class="md-ellipsis">
-      Getting Started
-    </span>
-</a>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="core-application-framework-caf-incubator">Core Application Framework (<abbr title="Core Application Framework">CAF</abbr>) Incubator<a class="headerlink" href="#core-application-framework-caf-incubator" title="Permanent link">¶</a></h1>
-<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">¶</a></h2>
-<p>This is a monorepo for hosting <abbr title="Core Application Framework">CAF</abbr> projects which are in proof-of-concept or limited release phase developed using
-Node.js, JavaScript, and TypeScript. The monorepo consists of the following types of projects:
-1. applications(sandbox)
-2. packages(libraries)
-3. starters</p>
-<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">¶</a></h2>
-<ul>
-<li><a href="#getting-started">Getting Started</a></li>
-<li><a href="#installation">Installation/Linking</a></li>
-<li><a href="#release">Release</a></li>
-</ul>
-<p><strong>Applications</strong>: These are the backend/frontend <code>sandbox</code> applications.
-  <strong>Packages</strong>: These are shared libraries/packages that can be used across multiple services or applications across <code>pickles</code>.</p>
-<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">¶</a></h2>
-<p>To get started with this monorepo, clone the repository and install the dependencies:</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Pickles-Australia/repo-caf-incubator.git
-<span class="nb">cd</span><span class="w"> </span>repo-caf-incubator
-</code></pre></div>
-<h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">¶</a></h1>
-<p>With Lerna and workspaces removed from <abbr title="Core Application Framework">CAF</abbr> 2.0, we are now required to install, build &amp; finally link applications manually, which requires cd 
-&amp; running the command so we came up with some bash scripts in scripts/ folder. </p>
-<p>How to symlink(link) packages within <abbr title="Core Application Framework">CAF</abbr>?
-There is already a bash script file(link-packages.sh) in scripts folder within root directory created that does linking for you.
-There is also a dependency-graph.json which is a json object containing the projects with their path, type, dependencies([] if no local dependency).
-e.g.:</p>
-<p>It has all the dependencies, project to link with dependencies
-e.g.: standard-lib is actually a dependency in "packages/feature-flags", "packages/nestjs-service-bus", "packages/nestjs-typeorm-transport", and "packages/nestjs-secrets-config" packages.
-The process is quite simple you just have to run the below from root:
-1. chmod +x scripts/link-packages.sh ---&gt;  change the file permissions of the link-packages.sh script to make it executable.
-2. scripts/link-packages.sh ---&gt; execute the script file.</p>
-<div class="highlight"><pre><span></span><code>    [
-        {
-            "name": "@pickles/standard-lib",
-            "path": "packages/standard-lib",
-            "type": "library",
-            "dependencies": []    
-        },
-    ]
-</code></pre></div>
-<p>The above describes a project pickles/standard-lib with no dependency, it has path from the root. Similary, the below describes a project within
-dependency-graph.json with a single dependency:
-<div class="highlight"><pre><span></span><code>    [
-        {
-            "name": "@pickles/nestjs-secrets-config",
-            "path": "packages/nestjs-secrets-config",
-            "type": "library",
-            "dependencies": [
-              "@pickles/standard-lib"
-            ]
-        },
-    ]
-</code></pre></div></p>
-<p>You can add in more dependencies to a project as needed refer <code>@pickles/caf-backend-sandbox</code> section in <code>depedency-graph.json</code> file.</p>
-<p>Note: If a project is dependent on another project, it should be in a higher order. This ensures that the dependencies are installed, built, and linked first.
-      available for the dependents. eg: @pickles/standard-lib.
-      It is required to specify the type of the project whether library or application because library are meant to be linked in various packages/application in <abbr title="Core Application Framework">CAF</abbr> 2.0 repository.</p>
-<p>It does the following:
-1. Runs a for loop, cd into the project with the <code>directory path</code> specified in path property of <code>dependency-graph.json</code>.
-2. if the type is library(since libraries are meant to be linked) then unlink it.
-3. runs npm ci or i by checking if <code>package-lock.json</code> exists or not.
-4. checks if dependencies are defined if yes then link all the dependencies at once.
-5. builds the project
-6. npm link so, that the dependents can link it(only if type="library" defined in depdendency-graph.json)</p>
-<p>Note: that package-name is taken from package.json &amp; doesn't refer to the directory name</p>
-<h1 id="caf-folder-structure"><abbr title="Core Application Framework">CAF</abbr> folder structure<a class="headerlink" href="#caf-folder-structure" title="Permanent link">¶</a></h1>
-<div class="highlight"><pre><span></span><code>repo-caf-incubator/
+<h1 id="sample-release-please-manifest">sample-release-please-manifest<a class="headerlink" href="#sample-release-please-manifest" title="Permanent link">¶</a></h1>
+<p>In root package.json
+{
+  "name": "sample-release-please-manifest",
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": [
+    "packages/<em>",
+    "starters/</em>"
+  ],
+  "type": "module", # this will set it to use ES
+  "scripts": {
+    "prepare": "husky install",
+    "test": "jest",
+    "build": "rm -rf dist &amp;&amp; lerna run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "husky": "^9.1.6",
+    "jest": "^29.7.0",
+    "lerna": "^8.1.9"
+  }
+}</p>
+<p>husky intitialize</p>
+<p>lerna initialize
+lerna init after configuring workspaces</p>
+<p>commitlint intialize/setup
+npm install --save-dev @commitlint/{config-conventional,cli} husky
+create a commitlint.config.js on root level</p>
+<p>install jest
+npm install --save-dev jest</p>
+<p>"prepare": "husky install",
+    "test": "jest",
+    "build": "rm -rf dist &amp;&amp; lerna run build"</p>
+<h1 id="building-up-using-lerna">Building up using lerna<a class="headerlink" href="#building-up-using-lerna" title="Permanent link">¶</a></h1>
+<p>By default there won't be any build script in package.json so manually add it else that project would
+not be considered for build.
+git commit --allow-empty -m "chore(hello-world-util): release 0.0.26" -m "Release-As: 0.0.26"</p>
+<h1 id="folder-structure">folder structure<a class="headerlink" href="#folder-structure" title="Permanent link">¶</a></h1>
+<p><div class="highlight"><pre><span></span><code>root/
 ├── .github/
 │   ├── actions/
 │   │   └── setup-node-project
@@ -452,180 +365,59 @@ dependency-graph.json with a single dependency:
 |       ├── quality.yml
 |       ├── release.yml
 |       └── workflow-sonarcloud-workspaces.yml
-├── applications/
-│   ├── caf-backend-sandbox/
-│   │   ├── package.json
-│   │   └── src/
 ├── packages/
-│   ├── ddd-types/
+│   ├── hello-world-util/
 │   │   ├── package.json
 │   │   └── src/
-│   ├── feature-flags/
+│   ├── data-helpers/
 │   │   ├── package.json
-│   │   └── src/
-│   ├── integration-event-handler/
-│   │   ├── package.json
-│   │   └── src/
-│   ├── nestjs-service-bus/
-│   │   ├── package.json
-│   │   └── src/
-│   ├── nestjs-typeorm-transport/
-│   │   ├── package.json
-│   │   └── src/
-│   ├── nestjs-secrets-config/
-│   │   ├── package.json
-│   │   └── src/
-│   └── standard-lib/
-│       ├── package.json
-│       └── src/
 ├── scripts/
 │   ├── link-packages.sh
 │   │── depdendency-graph.json   
 │   └── CONTRIBUTING.md
 ├── starters/
-│   ├── nestjs-http-fastify/
+│   ├── nestjs-startup/
 │   │   ├── package.json
 │   │   └── src/
-│   └── nestjs-typeorm-outbox/
-│       ├── package.json
-│       └── src/
 ├── .release-please-manifest.json
 │── release-please-config.json
 └── typedoc.json        
 </code></pre></div>
-<h1 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">¶</a></h1>
-<p>applications/* : Contains a <code>nestjs</code> <code>sandbox</code> application purely meant for testing <abbr title="Core Application Framework">CAF</abbr> 2.0 libraries.
-packages/* : Contains packages that gets published to pickles npm registry, see below:
-1. ddd-types:
-2. feature-flags:
-3. integration-event-handler: Contains decorator which can be commonly used
-    e.g.: IntegrationEventHandler accepts 3 args 
-        topic(some topic can be kafka or ASB),
-        eventType: your_event_type
-        transportId: The transport source eg: KAFKA or ASB
-4. nestjs-service-bus:
-   An npm package that can be used to connect to ASB(Azure service Bus) to connect to topics, queues and publish individual message or as a batch. For more see here https://caf-incubator.pickles.engineering/nestjs-service-bus/</p>
-<ol>
-<li>nestjs-typeorm-transport: A package that can be used to run the Outbox logic,
-    It queries the data from the outbox table for every interval and then it will use handlers from @nestjs/microservices to match the relevant event handler to send the data.
-    The clients then can receive the event in their controller decorated with the event handler
-    You can set this from your main.ts, set your own
-    eg:
-    <div class="highlight"><pre><span></span><code>     app.connectMicroservice({
-        strategy: new SimpleExponentialOutbox(
-        app.get(getDataSourceToken()),
-        OutboxEntity,
-        {
-            baseInterval: configService.get('OUTBOX_EXPONENTIAL_BASE', 1000),
-            maxInterval: configService.get('OUTBOX_EXPONENTIAL_MAX', 1000),
-            retryLimit: configService.get('OUTBOX_RETRY_LIMIT', 5),
-        },
-        ),
-    });
+Steps to setup publish test results</p>
+<p>npm install jest --save-dev
+npm install ts-jest --save-dev
+npm i --save-dev @types/jest
+npm install --save-dev jest-junit</p>
+<div class="highlight"><pre><span></span><code>  "scripts": {
+    "build": "tsc",
+    "test": "jest --verbose",
+    "test:cov": "jest --coverage"
+  },
 </code></pre></div>
-    Now, in your controller
-    <div class="highlight"><pre><span></span><code>     @Controller()
-        export class OutboxController {
-        private readonly logger = new Logger(OutboxController.name);
-
-            @SimpleOutboxEvent(OutboxEventEnum.ASSET_CREATED)
-            async handleAssetCreatedEvent(
-                @Payload() data: Record&lt;string, unknown&gt;,
-                @Ctx() context: OutboxContext&lt;OutboxEntity&gt;,
-            ) {
-                this.logger.log('Received asset updated event with', data);
-                this.logger.log('Event context', context);
-                // do what ever you want, either publish to kafka or asb or anything else
-            }
-        }
-</code></pre></div>
-        With this you will not have multiple layers of outbox, inbox to fetch and stream/circulate data. You will save your data from your application in to your outbox table, install the nestjs-typeorm-transport in your app, configure your app to use SimpleExponentialOutbox from your nestjs app and finally create an controller action
-        decorated with your choice of event, eg: ASSET_CREATED or ASSET_UPDATED or ORDER_DISPATCHED and what not. As already mentioned above the nestjs-typeorm-transport runs a logic internally based on your config that you set, it then picks the record from your outbox table(specified above as OutboxEntity in main.ts). When the app starts it binds/registers all the event handlers(eg: ASSET_CREATED, ASSET_UPDATE, etc.;) with nestjs.<div class="highlight"><pre><span></span><code># How to register your eventType
-While you create and outbox event to be saved in your outbox table, you can create a column eventType which holds the eventType(eg: ASSET_CREATED or ASSET_UPDATED, anything else), you are now needed to attach this event to your action method in controller using the decorator in the given eg above.
-</code></pre></div>
-<ol>
-<li>nestjs-secrets-config:</li>
-<li>standard-lib: A set of utilities</li>
-</ol>
-</li>
-</ol>
-<p>Starters contain nestjs application presently. The nestjs-typeorm-transport is currently used to test any package present in the packages/ directory, an npm and then test the functionality</p>
-<h1 id="release">Release<a class="headerlink" href="#release" title="Permanent link">¶</a></h1>
-<p>This is quite an interesting topic to discuss. <abbr title="Core Application Framework">CAF</abbr> 2.0 manages auto release by using google's release-please plugin in combination with google's release-please-action(a github action that uses configs to automate release).</p>
-<p>Release-please uses a set of config files where you can specify options on how you wish to manage your release. So, there are basically 2 files release-please.config.json, release-please.manifest.json @ the root of directory. 
-A sample eg of release-please-config.json looks like below:
-<div class="highlight"><pre><span></span><code>{
-    "include-v-in-tag": true,
-    "tag-separator": "@",
-    "always-link-local": true,
-    "packages":{
-        "packages/nestjs-typeorm-transport": {  
-            "component": "nestjs-typeorm-transport",                     
-            "release-type": "node",            
-            "changelog-path": "CHANGELOG.md"
-        },
-        "starters/nestjs-typeorm-outbox": {
-            "component": "nestjs-typeorm-outbox",
-            "release-type": "node",
-            "changelog-path": "CHANGELOG.md"
-        }
+<div class="highlight"><pre><span></span><code>  module.exports = {
+    displayName: "nestjs-typeorm-transport",
+    preset: '../../jest.config.js',
+    testEnvironment: 'node',
+    roots: ['&lt;rootDir&gt;/src'],
+    transform: {
+      '^.+\\.js$': 'babel-jest',
     },
-    "plugins":[
-        {
-            "type": "node-workspace",
-            "updateAllPackages": true,
-            "updatePeerDependencies": true
-        }
-    ],
-    "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
-  }
-</code></pre></div></p>
-<p>You can visit https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json to understand more about the schemas.
-  You need to specify the list of projects within "packages" with a link to the package from the root directory. You may wish to add some plugins supported see <a href="https://github.com/googleapis/release-please/blob/main/docs/manifest-releaser.md#plugins">here</a> to include additional behaviour see https://github.com/googleapis/release-please/blob/main/docs/manifest-releaser.md</p>
-<p>release-please-manifest.json:
-  manifest base release-please is typically used when you have monorepos, the official docs says: "The motivation of the manifest-based releaser is support for monorepos"</p>
-<p>The manifest file(release-please-manifest.json) is basically a package's version tracking file.</p>
-<p>How it works in action:
-  1. Create release-please-config.json &amp; release-please-manifest.json as suggested above.
-  2. Update workflows to run against the above created config files.
-<div class="highlight"><pre><span></span><code>     on:
-     push:
-        branches:
-        - main
-
-    permissions:
-    contents: write
-    pull-requests: write
-
-    name: release-please
-
-    jobs:
-    release-please:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: googleapis/release-please-action@v4
-            with:
-            # this assumes that you have created a personal access token
-            # (PAT) and configured it as a GitHub action secret named
-            # `MY_RELEASE_PLEASE_TOKEN` (this secret name is not important).
-            token: ${{ secrets.MY_RELEASE_PLEASE_TOKEN }}
-            # this is a built-in strategy in release-please, see "Action Inputs"
-            # for more options
-            release-type: simple
-</code></pre></div></p>
-<p>For more see <a href="https://github.com/googleapis/release-please-action">Github official docs for release-please</a>.
-    When the branch is merged release-please looks for the commit history and evaluates it, it then comes out with the version, see below
-<div class="highlight"><pre><span></span><code>    fix: which represents bug fixes, and correlates to a SemVer patch.
-    feat: which represents a new feature, and correlates to a SemVer minor.
-    feat!:, or fix!:, refactor!:, etc., which represent a breaking change (indicated by the !) and will result in a SemVer major.
+    moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node'],
+    reporters: [
+      "default",
+      ["jest-junit", { outputDirectory: "./reports", outputName: "test-results.xml" }]
+    ]
+  };
 </code></pre></div>
-  Once you create a pr with any of the above commit details and merge the pr, github-actions bot  will then auto create a pr with changelog.md, it also magically updates 
-  package.json dependencies see an existing <a href="https://github.com/Pickles-Australia/repo-caf-incubator/pull/51/files"><abbr title="Pull Request">PR</abbr></a> as an example.</p>
-<p>You have probability to update the changelog.md since its a <abbr title="Pull Request">PR</abbr> and then merge to proceed once, the bot created <abbr title="Pull Request">PR</abbr> is merged release-please will generate a github release, git tag with changelogs.</p>
-<p>Additional Notes:
-    You may commit some code and merge in the <code>main</code> but would not like to create a release, for eg: you have some code refactors todo, workflow updates with, readme.md changes etc;
-    You can create a branch with chore as prefix eg: chore(repo): my-sample-refactor-code → branch name
-    Each commit should then have a chore eg: chore(repo): removed unused variables ----&gt; commit message with subject and scope</p>
+<p>Typedoc
+1. create a typedoc.json in root folder and also one in each individual package.
+2. update scripts in packages.json and also include packages for typedoc in packages.json's devDependencies.
+3. Each package should have a mkdocs.yml of it's own with the below content:
+    <div class="highlight"><pre><span></span><code>    site_name: Date Helpers
+    docs_dir: docs
+</code></pre></div>
+    docs_dir tells the path to look into
+4. If we have READEME.md in each package's docs/ then it will display on when the left tab clicked.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
