@@ -8,7 +8,7 @@
 <link href="API/" rel="prev"/>
 <link href="../assets/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.5.30" name="generator"/>
-<title>Standard-Lib (@pickles/standard-lib) - CAF Incubator</title>
+<title>feature-flags (iam/feature-flags) - CAF Incubator</title>
 <link href="../assets/stylesheets/main.3cba04c6.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#standard-lib-picklesstandard-lib">
+<a class="md-skip" href="#feature-flags-iamfeature-flags">
           Skip to content
         </a>
 </div>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Standard-Lib (@pickles/standard-lib)
+              feature-flags (iam/feature-flags)
             
           </span>
 </div>
@@ -345,18 +345,18 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="standard-lib-picklesstandard-lib">Standard-Lib (@pickles/standard-lib)<a class="headerlink" href="#standard-lib-picklesstandard-lib" title="Permanent link">¶</a></h1>
+<h1 id="feature-flags-iamfeature-flags">feature-flags (iam/feature-flags)<a class="headerlink" href="#feature-flags-iamfeature-flags" title="Permanent link">¶</a></h1>
 <p><img alt="" src="API/coverage.svg"/></p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
-<p>The <code>standard-lib</code> package is a comprehensive library of utility functions and classes designed to streamline and simplify your JavaScript and TypeScript development. This package provides a wide range of functionalities, from data manipulation and validation to advanced error handling and logging.</p>
-<p>With <code>standard-lib</code>, you can reduce boilerplate, improve code readability, and ensure consistency across your codebase. The package is designed with a focus on performance, robustness, and ease of use.</p>
-<p>Whether you're working on a small project or a large-scale application, <code>standard-lib</code> can help you write cleaner, more efficient, and more maintainable code. It's a must-have tool for any JavaScript or TypeScript developer.</p>
+<p>The <code>feature-flags</code> package is a comprehensive library of utility functions and classes designed to streamline and simplify your JavaScript and TypeScript development. This package provides a wide range of functionalities, from data manipulation and validation to advanced error handling and logging.</p>
+<p>With <code>feature-flags</code>, you can reduce boilerplate, improve code readability, and ensure consistency across your codebase. The package is designed with a focus on performance, robustness, and ease of use.</p>
+<p>Whether you're working on a small project or a large-scale application, <code>feature-flags</code> can help you write cleaner, more efficient, and more maintainable code. It's a must-have tool for any JavaScript or TypeScript developer.</p>
 <p><a href="#exception">Exception</a>
 <a href="#option">Option</a>
 <a href="#result">Result</a></p>
 <h2 id="exception">Exception<a class="headerlink" href="#exception" title="Permanent link">¶</a></h2>
 <p>The <code>Exception</code> class is a powerful tool for handling errors in a consistent and informative way. Here's how you can use it:</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Exception</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@pickles/standard-lib'</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Exception</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'iam/feature-flags'</span><span class="p">;</span>
 
 <span class="kd">class</span><span class="w"> </span><span class="nx">CustomException</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Exception</span><span class="w"> </span><span class="p">{}</span>
 
@@ -386,7 +386,7 @@
 <span class="cm">      "stack":</span>
 <span class="cm">          UserAlreadyExistsException: User already exists.</span>
 <span class="cm">              at Object.value (/Workspace/projects/repo-caf-incubator/starters/nestjs-http-fastify/src/users/users.service.ts:46:41)</span>
-<span class="cm">              at Value.match (/Workspace/projects/repo-caf-incubator/packages/standard-lib/src/option.ts:173:14)</span>
+<span class="cm">              at Value.match (/Workspace/projects/repo-caf-incubator/packages/feature-flags/src/option.ts:173:14)</span>
 <span class="cm">              at UsersService.create (/Workspace/projects/repo-caf-incubator/starters/nestjs-http-fastify/src/users/users.service.ts:45:41)</span>
 <span class="cm">              at UsersController.createUser (/Workspace/projects/repo-caf-incubator/starters/nestjs-http-fastify/src/users/users.controller.ts:55:44)</span>
 <span class="cm">              at /Workspace/projects/repo-caf-incubator/node_modules/@nestjs/core/router/router-execution-context.js:38:29</span>
@@ -398,7 +398,7 @@
 <p>The <code>Option</code> type represents the possibly a value can contain some value or nothing (null/undefined). In declaration <code>Option&lt;T&gt;</code> generic type, it either be
 a subclass of <code>Value&lt;T&gt;</code> which will have a value or <code>None</code> which is null/undefined. The APIs are the for both <code>Value&lt;T&gt;</code> and <code>None</code> which allows chained
 operations with each method's behaviour adapted to respective subclass type.</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Option</span><span class="p">,</span><span class="w"> </span><span class="nx">Value</span><span class="p">,</span><span class="w"> </span><span class="nx">None</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@pickles/standard-lib'</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Option</span><span class="p">,</span><span class="w"> </span><span class="nx">Value</span><span class="p">,</span><span class="w"> </span><span class="nx">None</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'iam/feature-flags'</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Value</span><span class="p">(</span><span class="s1">'Hello World!'</span><span class="p">);</span><span class="w"> </span><span class="c1">// Value is a subclass of Option&lt;T&gt; abstract class representing a value.</span>
 
@@ -472,7 +472,7 @@ operations with each method's behaviour adapted to respective subclass type.</p>
 <span class="w">                        </span><span class="p">});</span>
 </code></pre></div>
 <h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Result</span><span class="p">,</span><span class="w"> </span><span class="nx">Success</span><span class="p">,</span><span class="w"> </span><span class="nx">Failure</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@pickles/standard-lib'</span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Result</span><span class="p">,</span><span class="w"> </span><span class="nx">Success</span><span class="p">,</span><span class="w"> </span><span class="nx">Failure</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'iam/feature-flags'</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">divide</span><span class="p">(</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Result</span><span class="o">&lt;</span><span class="ne">Error</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">failure</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">'Division by zero error!'</span><span class="p">))</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">success</span><span class="p">(</span><span class="nx">x</span><span class="o">/</span><span class="nx">y</span><span class="p">);</span>
