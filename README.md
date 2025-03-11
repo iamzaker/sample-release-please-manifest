@@ -110,3 +110,8 @@ npm install --save-dev jest-junit
     ]
   };
 ```
+
+Typedoc
+1. create a typedoc.json in root folder and also one in each individual package.
+2. update scripts in packages.json and also include packages for typedoc in packages.json's devDependencies.
+3. 

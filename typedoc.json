@@ -1,0 +1,55 @@
+{
+    "plugin": ["typedoc-plugin-markdown", "typedoc-plugin-coverage"],
+    "coverageLabel": "API docs",
+    /**
+     * Render as tables in most cases, instead of nested headings/lists, for
+     * readability
+     */
+    "indexFormat": "table",
+    "parametersFormat": "table",
+    "interfacePropertiesFormat": "table",
+    "classPropertiesFormat": "table",
+    "enumMembersFormat": "table",
+    "propertyMembersFormat": "table",
+    /**
+     * Hide page header, we have MkDocs and it's nav bar
+     */
+    "hidePageHeader": true,
+    /**
+     * The Markdown plugin creates quite verbose titles, like `Class: abstract
+     * EntityBaseModel`, which are a bit too verbose for the MkDocs navigation
+     *
+     * If we remove the page titles, MkDocs will infer it from the filename,
+     * which is much shorter
+     */
+    "hidePageTitle": true,
+    /**
+     * Keep the breadcrumbs this time, they're quite useful for something the
+     * size of Domain Shared Kernel
+     */
+    "hideBreadcrumbs": false,
+    /**
+     * Fixes angle brackets (for generics) being escaped (e.g. Promise\<T>)
+     *
+     * See also: https://github.com/typedoc2md/typedoc-plugin-markdown/issues/665
+     */
+    "useHTMLEncodedBrackets": true,
+    /**
+     * Typedoc will include a "defined in <source link>" by default, but this
+     * takes up a lot of space in the table, so we'll disable it just in tables
+     * to save space and we have the definition link for the parent member in
+     * most cases - see also
+     * https://www.typedoc-plugin-markdown.org/docs/options/display-options#--tablecolumnsettings
+     */
+    "tableColumnSettings": {
+        "hideSources": true,
+    },
+    /**
+     * Don't try and copy the README content into the Typedoc output; we have
+     * MkDocs in general for that
+     *
+     * Also, disabling the README integration seems to make the module index the
+     * main page, which is exactly what we want
+     */
+    "readme": "none"
+}
