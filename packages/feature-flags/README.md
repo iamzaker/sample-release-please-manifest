@@ -1,14 +1,14 @@
-# Standard-Lib (@pickles/standard-lib)
+# feature-flags (iam/feature-flags)
 
 ![](./API/coverage.svg)
 
 ## Overview
 
-The `standard-lib` package is a comprehensive library of utility functions and classes designed to streamline and simplify your JavaScript and TypeScript development. This package provides a wide range of functionalities, from data manipulation and validation to advanced error handling and logging.
+The `feature-flags` package is a comprehensive library of utility functions and classes designed to streamline and simplify your JavaScript and TypeScript development. This package provides a wide range of functionalities, from data manipulation and validation to advanced error handling and logging.
 
-With `standard-lib`, you can reduce boilerplate, improve code readability, and ensure consistency across your codebase. The package is designed with a focus on performance, robustness, and ease of use.
+With `feature-flags`, you can reduce boilerplate, improve code readability, and ensure consistency across your codebase. The package is designed with a focus on performance, robustness, and ease of use.
 
-Whether you're working on a small project or a large-scale application, `standard-lib` can help you write cleaner, more efficient, and more maintainable code. It's a must-have tool for any JavaScript or TypeScript developer.
+Whether you're working on a small project or a large-scale application, `feature-flags` can help you write cleaner, more efficient, and more maintainable code. It's a must-have tool for any JavaScript or TypeScript developer.
 
 [Exception](#exception)
 [Option](#option)
@@ -19,7 +19,7 @@ Whether you're working on a small project or a large-scale application, `standar
 The `Exception` class is a powerful tool for handling errors in a consistent and informative way. Here's how you can use it:
 
 ```typescript
-import { Exception } from '@pickles/standard-lib';
+import { Exception } from 'iam/feature-flags';
 
 class CustomException extends Exception {}
 
@@ -49,7 +49,7 @@ error: {
       "stack":
           UserAlreadyExistsException: User already exists.
               at Object.value (/Workspace/projects/repo-caf-incubator/starters/nestjs-http-fastify/src/users/users.service.ts:46:41)
-              at Value.match (/Workspace/projects/repo-caf-incubator/packages/standard-lib/src/option.ts:173:14)
+              at Value.match (/Workspace/projects/repo-caf-incubator/packages/feature-flags/src/option.ts:173:14)
               at UsersService.create (/Workspace/projects/repo-caf-incubator/starters/nestjs-http-fastify/src/users/users.service.ts:45:41)
               at UsersController.createUser (/Workspace/projects/repo-caf-incubator/starters/nestjs-http-fastify/src/users/users.controller.ts:55:44)
               at /Workspace/projects/repo-caf-incubator/node_modules/@nestjs/core/router/router-execution-context.js:38:29
@@ -65,7 +65,7 @@ a subclass of `Value<T>` which will have a value or `None` which is null/undefin
 operations with each method's behaviour adapted to respective subclass type.
 
 ```typescript
-import { Option, Value, None } from '@pickles/standard-lib';
+import { Option, Value, None } from 'iam/feature-flags';
 
 const value = Value('Hello World!'); // Value is a subclass of Option<T> abstract class representing a value.
 
@@ -143,7 +143,7 @@ const customerOrNone = Option.of(await customerRepository.findById('cust-007'))
 ## Result
 
 ```Typescript
-import { Result, Success, Failure } from '@pickles/standard-lib'
+import { Result, Success, Failure } from 'iam/feature-flags'
 
 function divide(x: number, y: number): Result<Error, number> {
   return y === 0 ? Result.failure(new Error('Division by zero error!')) : Result.success(x/y);
