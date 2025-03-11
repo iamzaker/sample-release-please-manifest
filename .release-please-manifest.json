@@ -2,7 +2,7 @@
     "packages/hello-world-util": "6.0.0",
     "starters/nestjs-startup-app": "4.0.1",
     "packages/date-helpers": "4.1.0",
-    "packages/feature-flags": "1.0.0",
+    "packages/feature-flags": "1.0.1",
     "packages/string-utils": "1.0.0",
     "packages/task-queue-manager": "1.0.0"
 }
