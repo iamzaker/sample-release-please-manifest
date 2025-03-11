@@ -48,7 +48,7 @@ not be considered for build.
 git commit --allow-empty -m "chore(hello-world-util): release 0.0.26" -m "Release-As: 0.0.26"
 
 
-# CAF folder structure
+# folder structure
 ```plaintext
 root/
 ├── .github/
