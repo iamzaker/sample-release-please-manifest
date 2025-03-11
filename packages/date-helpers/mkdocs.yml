@@ -3,3 +3,4 @@ nav:
   - Overview: index.md
   - Getting Started: getting-started.md
   - API Reference: api.md
+docs_dir: docs
