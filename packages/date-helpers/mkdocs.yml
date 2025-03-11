@@ -1,3 +1,6 @@
 site_name: Date Helpers
-
+nav:
+  # Each entry in top-level "docs/" folder must be a hard-coded nav,
+  # unfortunately (`./` doesn't seem to work)
+  - Home: README.md
 docs_dir: docs
